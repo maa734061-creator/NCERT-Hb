@@ -300,9 +300,16 @@ function askT(){var w=((PUB&&PUB.wa)||D._wa||'').trim();if(!w){NT='Teacher has n
 function mu(f){if(!f.data)return f.url||('/_blob/'+f.id);var M={m4a:'audio/mp4',mp4:'video/mp4',mp3:'audio/mpeg',wav:'audio/wav',aac:'audio/aac',ogg:'audio/ogg',oga:'audio/ogg',webm:f.t==='video'?'video/webm':'audio/webm'},m=M[((f.name||'').split('.').pop()||'').toLowerCase()];return m?f.data.replace(/^data:[^,]*,/,'data:'+m+';base64,'):f.data}
 async function qrUp(inp){var f=inp.files[0];if(!f)return;if(f.size>1500000){NT='Image is too big (max 1.5 MB).';render();return}D._qr=await rd(f);dd();NT='QR image saved. Tap Publish.';render()}
 async function ghFile(f){var ext=((f.name.split('.').pop())||'bin').toLowerCase().replace(/[^a-z0-9]/g,'')||'bin',path='media/'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+'.'+ext;
+ if(f.size>90000000)throw new Error('File is over 90 MB ('+Math.round(f.size/1e6)+' MB). Use a lower quality, or a YouTube/Drive link.');
+ var api='https://api.github.com/repos/maa734061-creator/NCERT-Hb/git/',hd={Authorization:'Bearer '+TOK,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+ async function J(u,o){var r=await fetch(api+u,Object.assign({headers:hd},o||{}));if(!r.ok)throw new Error(r.status+' '+(await r.text()).slice(0,80));return r.json()}
  var buf=new Uint8Array(await f.arrayBuffer());
- var res=await fetch('https://api.github.com/repos/maa734061-creator/NCERT-Hb/contents/'+path,{method:'PUT',headers:{Authorization:'Bearer '+TOK,Accept:'application/vnd.github+json'},body:JSON.stringify({message:'Add media',content:b2s(buf),branch:'main'})});
- if(!res.ok)throw new Error(res.status+' '+(await res.text()).slice(0,80));return path}
+ var blob=await J('blobs',{method:'POST',body:JSON.stringify({content:b2s(buf),encoding:'base64'})});
+ var ref=await J('ref/heads/main'),cm=await J('commits/'+ref.object.sha);
+ var tree=await J('trees',{method:'POST',body:JSON.stringify({base_tree:cm.tree.sha,tree:[{path:path,mode:'100644',type:'blob',sha:blob.sha}]})});
+ var nc=await J('commits',{method:'POST',body:JSON.stringify({message:'Add media',tree:tree.sha,parents:[ref.object.sha]})});
+ await J('refs/heads/main',{method:'PATCH',body:JSON.stringify({sha:nc.sha})});
+ return path}
 function addBox(ph,fn){return S.edit?'<div class="add"><input id="in" placeholder="'+ph+'"><button class="btn" onclick="'+fn+'()">Add</button></div>':''}
 function lockHtml(){
  var t=SEED?(OWNER?'🔒 Teacher login: enter your password':'🔒 Enter password to view content'):(OWNER?'First time: create your password (share it with students)':'Content coming soon.');
