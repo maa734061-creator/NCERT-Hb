@@ -41,7 +41,7 @@ nav button.on{color:var(--pr);font-weight:600}
 
 <nav><button id="n-home" onclick="go({v:'home'})" class="on">🏠 Home</button><button id="n-set" onclick="go({v:'set'})" class="">⚙️ Settings</button><button id="n-ask" onclick="askT()">💬 Ask</button><button id="n-pri" onclick="go({v:'pri'})" class="">🔒 Privacy</button></nav>
 <script>
-var CLASSES=[6,7,8,9,10,11,12],D={},S={edit:true,theme:'auto',fs:16},V={v:'home'},U=false,OWNER=false,PW='',DIRTY=false,TE=new TextEncoder(),TD=new TextDecoder(),SEED='',IDC=Date.now();
+var CLASSES=[6,7,8,9,10,11,12,106,107,108,109,110,111,112],D={},S={edit:true,theme:'auto',fs:16},V={v:'home'},U=false,OWNER=false,PW='',DIRTY=false,TE=new TextEncoder(),TD=new TextDecoder(),SEED='',IDC=Date.now();
 var DEF=`6|S|The Wonderful World of Science|What is science;Scientific method;Science around us
 6|S|Diversity in the Living World|Grouping living things;Plants and their types;Animals and their types
 6|S|Mindful Eating: A Path to a Healthy Body|Food sources and parts;Nutrients and balanced diet;Healthy eating habits
@@ -182,9 +182,229 @@ var DEF=`6|S|The Wonderful World of Science|What is science;Scientific method;Sc
 12|B|Biotechnology and its Applications|Agriculture;Medicine;Ethical issues
 12|B|Organisms and Populations|Adaptations;Population attributes;Interactions
 12|B|Ecosystem|Structure;Energy flow;Productivity
-12|B|Biodiversity and Conservation|Patterns of biodiversity;Loss of biodiversity;Conservation`;
-var PFX={S:'',P:'Physics · ',C:'Chemistry · ',B:'Biology · '};
-var PUB=null,PENC={},TOK='',LAZY=false,LOADED={},PCL=[6,7,8,9,10,11,12];try{TOK=localStorage.getItem('nch_tk')||''}catch(e){}
+12|B|Biodiversity and Conservation|Patterns of biodiversity;Loss of biodiversity;Conservation
+106|S|Locating Places on the Earth|Latitudes and longitudes;Using maps and globes;Finding locations
+106|S|Oceans and Continents|Continents of the world;Oceans of the world;Where we live
+106|S|Landforms and Life|Mountains, plateaus and plains;How landforms shape life;Land use and settlements
+106|S|Timeline and Sources of History|Reading timelines;Sources of history;Historians and evidence
+106|S|India, That Is Bharat|Names of our country;Geography of ancient India;Bharat's identity
+106|S|The Beginnings of Indian Civilisation|Early settlements;Harappan cities;Daily life and trade
+106|S|India's Cultural Roots|Ancient traditions;Languages and arts;Knowledge traditions
+106|S|Unity in Diversity, or 'Many in the One'|Diversity in India;Festivals and food;Living together
+106|S|Family and Community|Family and its types;Community life;Roles and responsibilities
+106|S|Grassroots Democracy - Part 1: Governance|What is governance;Role of government;Participation of citizens
+106|S|Grassroots Democracy - Part 2: Local Government in Rural Areas|Gram Panchayat;Gram Sabha;Panchayati Raj levels
+106|S|Grassroots Democracy - Part 3: Local Government in Urban Areas|Municipalities;Urban services;Citizens and the city
+106|S|The Value of Work|Types of work;Dignity of labour;Work and community
+106|S|Economic Activities Around Us|Primary, secondary and tertiary;Farming and industry;Markets and trade
+107|S|Geographical Diversity of India|Physical regions;Rivers and plains;Regions and people
+107|S|Understanding the Weather|Elements of weather;Measuring weather;Weather and daily life
+107|S|Climates of India|Monsoon;Seasons of India;Regional climates
+107|S|New Beginnings: Cities and States|Early cities;Janapadas and mahajanapadas;Cities and trade
+107|S|The Rise of Empires|Magadha and the Mauryas;Ashoka;Administration
+107|S|The Age of Reorganisation|Post-Mauryan kingdoms;Trade and exchange;New states
+107|S|The Gupta Era: An Age of Tireless Creativity|Gupta rulers;Science and art;Travellers' accounts
+107|S|How the Land Becomes Sacred|Sacred places;Pilgrimage;Land and belief
+107|S|From the Rulers to the Ruled: Types of Governments|Forms of government;Monarchy and democracy;Rule and people
+107|S|The Constitution of India - An Introduction|Making of the Constitution;Preamble;Fundamental ideas
+107|S|From Barter to Money|Barter system;Origin of money;Modern money
+107|S|Understanding Markets|Types of markets;Demand and supply;Buyers and sellers
+107|S|The Story of Indian Farming|Early agriculture;Crops and regions;Modern farming
+107|S|India and Her Neighbours|Neighbouring countries;Shared history;Relations today
+107|S|Empires and Kingdoms: 6th to 10th Centuries|Major dynasties;Society and culture;Administration
+107|S|Turning Tides: 11th and 12th Centuries|New powers;Invasions and responses;Society in change
+107|S|India, a Home to Many|Communities;Cultures and religions;Unity
+107|S|The State, the Government, and You|Role of the state;Levels of government;Role of citizens
+107|S|Infrastructure - Engine of India's Development|Roads and railways;Power and water;Development
+107|S|Banks and the Magic of Finance|Role of banks;Savings and loans;Interest and credit
+108|S|Natural Resources and Their Use|Types of resources;Land, water and soil;Conservation
+108|S|Reshaping India's Political Map|Rise of British power;Princely states;Integration
+108|S|The Rise of the Marathas|Shivaji;Maratha administration;Expansion
+108|S|The Colonial Era in India|East India Company;Colonial economy;Impact on society
+108|S|Universal Franchise and India's Electoral System|Right to vote;Elections;Election Commission
+108|S|The Parliamentary System: Legislature and Executive|Parliament;Executive;How laws are made
+108|S|Factors of Production|Land and labour;Capital and enterprise;Production process
+108|S|World Geography: Some Glimpses|Continents and regions;Landscapes;Climates and people
+108|S|India's Long Road to Independence|Early resistance;Freedom movement;Independence
+108|S|A Journey Through Indian Architecture|Ancient architecture;Medieval buildings;Colonial and modern
+108|S|The Role of the Judiciary in Our Society|Courts;Independence of judiciary;Access to justice
+108|S|Citizenship: Rights and Duties|Citizenship;Fundamental rights;Fundamental duties
+108|S|Dynamics of Population|Population growth;Distribution;Population change
+108|S|India's Urban Landscape|Cities of India;Urbanisation;Urban challenges
+108|S|Cultural Currents: 13th to 17th Centuries|Bhakti and Sufi traditions;Art and literature;Regional cultures
+109|S|Understanding Social Science|What is social science;History, geography, civics and economics;How they connect
+109|S|Shaping of the Earth's Surface|Earth's interior;Plate tectonics;Landforms and disasters
+109|S|Atmosphere and Climate|Layers of the atmosphere;Weather and climate;Climate zones
+109|S|Early Humans and Beginning of Civilization|Early humans;River valley civilisations;Harappan civilisation
+109|S|State and Society up to 1000 CE|Early states;Society and economy;Culture and learning
+109|S|Understanding Democracy|What is democracy;Democracy in India;Why democracy
+109|S|Elections|Why elections;FPTP and proportional representation;The Emergency
+109|S|Building Blocks in Economics: The Problem of Choice|Scarcity;Opportunity cost;Central problems of an economy
+109|S|The Price Puzzle: What Drives the Market|Demand;Supply;Market equilibrium
+110|H|The Rise of Nationalism in Europe|French Revolution and the nation;Unification of Germany and Italy;Nationalism and imperialism
+110|H|Nationalism in India|Non-Cooperation Movement;Civil Disobedience Movement;Sense of collective belonging
+110|H|The Making of a Global World|Pre-modern trade;Interwar economy;Post-war order
+110|H|The Age of Industrialisation|Before the factory;Hand labour and steam power;Industrialisation in the colonies
+110|H|Print Culture and the Modern World|First printed books;Print revolution;Print in India
+110|G|Resources and Development|Types of resources;Resource planning;Land and soil
+110|G|Forest and Wildlife Resources|Flora and fauna;Conservation;Community participation
+110|G|Water Resources|Water scarcity;Dams;Rainwater harvesting
+110|G|Agriculture|Types of farming;Major crops;Technology and reforms
+110|G|Minerals and Energy Resources|Minerals;Conventional energy;Non-conventional energy
+110|G|Manufacturing Industries|Importance of industry;Types of industries;Industrial pollution
+110|G|Lifelines of National Economy|Roads and railways;Ports and airways;Trade and tourism
+110|O|Power Sharing|Belgium and Sri Lanka;Forms of power sharing;Why power sharing
+110|O|Federalism|What is federalism;Federalism in India;Decentralisation
+110|O|Gender, Religion and Caste|Gender and politics;Religion and politics;Caste and politics
+110|O|Political Parties|Why parties;National and state parties;Challenges
+110|O|Outcomes of Democracy|Accountability;Economic growth;Dignity and freedom
+110|E|Development|Development goals;Income and other criteria;Sustainability
+110|E|Sectors of the Indian Economy|Primary, secondary and tertiary;Employment;Organised and unorganised
+110|E|Money and Credit|Modern forms of money;Banks;Credit and self-help groups
+110|E|Globalisation and the Indian Economy|Multinational companies;Liberalisation;Impact
+110|E|Consumer Rights|Consumer awareness;Consumer rights;Consumer movement
+111|H|From the Beginning of Time|Early humans;Hunting and gathering;Evolution of tools
+111|H|Writing and City Life|Mesopotamia;Cities and writing;Trade and society
+111|H|An Empire Across Three Continents|Roman Empire;Society and economy;Fall of Rome
+111|H|Central Islamic Lands|Rise of Islam;Caliphates;Culture and learning
+111|H|Nomadic Empires|The Mongols;Chinggis Khan;Society and trade
+111|H|The Three Orders|Feudalism;Church and monarchy;Peasant life
+111|H|Changing Cultural Traditions|Renaissance;Humanism;Scientific revolution
+111|H|Confrontation of Cultures|Voyages of exploration;Aztecs and Mayas;Colonisation
+111|H|The Industrial Revolution|Causes in Britain;Factories and cities;Social impact
+111|H|Displacing Indigenous Peoples|North America;Australia;Settler colonies
+111|H|Paths to Modernisation|Japan;China;Westernisation
+111|G|Geography as a Discipline|Nature of geography;Branches;Approaches
+111|G|The Origin and Evolution of the Earth|Origin theories;Big Bang;Evolution of the layers
+111|G|Interior of the Earth|Sources of information;Layers of the Earth;Earthquakes and volcanoes
+111|G|Distribution of Oceans and Continents|Continental drift;Sea-floor spreading;Plate tectonics
+111|G|Minerals and Rocks|Minerals;Types of rocks;Rock cycle
+111|G|Geomorphic Processes|Endogenic processes;Exogenic processes;Weathering and erosion
+111|G|Landforms and their Evolution|Running water;Glaciers and wind;Waves and groundwater
+111|G|Composition and Structure of Atmosphere|Composition;Layers;Importance
+111|G|Solar Radiation, Heat Balance and Temperature|Insolation;Heat budget;Temperature distribution
+111|G|Atmospheric Circulation and Weather Systems|Pressure belts;Winds;Cyclones
+111|G|Water in the Atmosphere|Humidity;Clouds;Precipitation
+111|G|World Climate and Climate Change|Climate classification;Climate zones;Global warming
+111|G|Water (Oceans)|Hydrological cycle;Ocean relief;Temperature and salinity
+111|G|Movements of Ocean Water|Waves;Tides;Ocean currents
+111|G|Life on the Earth|Biosphere;Ecosystems;Biomes
+111|G|Biodiversity and Conservation|Biodiversity;Threats;Conservation
+111|g|India: Location|Location and extent;Neighbours;Time zones
+111|g|Structure and Physiography|Geological structure;Physiographic divisions;Himalayas and plains
+111|g|Drainage System|Himalayan rivers;Peninsular rivers;Lakes
+111|g|Climate|Monsoon mechanism;Seasons;Rainfall
+111|g|Natural Vegetation|Forest types;Distribution;Conservation
+111|g|Soils|Soil types;Soil formation;Soil conservation
+111|g|Natural Hazards and Disasters|Earthquakes and floods;Cyclones and droughts;Disaster management
+111|O|Constitution: Why and How?|Need for a constitution;Making of the Constitution;Features
+111|O|Rights in the Indian Constitution|Fundamental rights;Equality and freedom;Directive principles
+111|O|Election and Representation|Election system;First past the post;Reservation
+111|O|Executive|President and Prime Minister;Council of Ministers;Bureaucracy
+111|O|Legislature|Parliament;Lawmaking;Parliamentary committees
+111|O|Judiciary|Supreme Court;Judicial review;Public interest litigation
+111|O|Federalism|Federal features;Centre-state relations;Demands for autonomy
+111|O|Local Governments|Panchayati Raj;Urban local bodies;73rd and 74th Amendments
+111|O|Constitution as a Living Document|Amendments;Basic structure;Interpretation
+111|O|The Philosophy of the Constitution|Liberty and equality;Social justice;Secularism and democracy
+111|O|Political Theory: An Introduction|What is politics;Why theory;Concepts
+111|O|Freedom|Meaning of freedom;Negative and positive liberty;Harm principle
+111|O|Equality|Why equality;Types of equality;Feminism and Marxism
+111|O|Social Justice|Meaning of justice;Distribution;Rawls
+111|O|Rights|What are rights;Types of rights;Rights and duties
+111|O|Citizenship|Full membership;Equal rights;Global citizenship
+111|O|Nationalism|Nation and nationalism;Self-determination;Pros and cons
+111|O|Secularism|Meaning;Indian secularism;Criticisms
+111|O|Peace|Meaning of peace;Violence;Paths to peace
+111|O|Development|Meaning;Critiques;Alternative paths
+111|E|Indian Economy on the Eve of Independence|Colonial economy;Agriculture and industry;Poverty and demography
+111|E|Indian Economy 1950-1990|Planning;Agriculture and land reforms;Industrial policy
+111|E|Liberalisation, Privatisation and Globalisation: An Appraisal|1991 crisis;LPG reforms;Appraisal
+111|E|Poverty|Poverty lines;Causes;Anti-poverty programmes
+111|E|Human Capital Formation in India|Human capital;Education;Health
+111|E|Rural Development|Credit;Marketing;Diversification
+111|E|Employment: Growth, Informalisation and Other Issues|Workforce;Informal sector;Unemployment
+111|E|Infrastructure|Energy;Health;Role of infrastructure
+111|E|Environment and Sustainable Development|Environment;Pollution;Sustainable development
+111|E|Comparative Development Experiences of India and its Neighbours|India, Pakistan and China;Development strategies;Comparisons
+111|E|Statistics: Introduction|Meaning of statistics;Uses;Limitations
+111|E|Collection of Data|Sources;Census and sampling;Methods
+111|E|Organisation of Data|Raw data;Frequency distribution;Classification
+111|E|Presentation of Data|Tables;Diagrams;Graphs
+111|E|Measures of Central Tendency|Mean;Median;Mode
+111|E|Measures of Dispersion|Range;Quartile deviation;Standard deviation
+111|E|Correlation|Meaning;Scatter diagram;Karl Pearson
+111|E|Index Numbers|Meaning;Construction;Uses
+112|H|Bricks, Beads and Bones|Harappan cities;Craft and trade;Decline
+112|H|Kings, Farmers and Towns|Early states;Agriculture;Towns and trade
+112|H|Kinship, Caste and Class|Kinship;Caste;Mahabharata
+112|H|Thinkers, Beliefs and Buildings|Jainism and Buddhism;Stupas;Early Hinduism
+112|H|Through the Eyes of Travellers|Al-Biruni;Ibn Battuta;Bernier
+112|H|Bhakti-Sufi Traditions|Bhakti saints;Sufi orders;Society and faith
+112|H|An Imperial Capital: Vijayanagara|Hampi;Kings and temples;Administration
+112|H|Peasants, Zamindars and the State|Agrarian society;Land revenue;Zamindars
+112|H|Kings and Chronicles|Mughal empire;Akbar's court;Chronicles
+112|H|Colonialism and the Countryside|Bengal and zamindars;Santhals and Deccan riots;Revenue systems
+112|H|Rebels and the Raj|Revolt of 1857;Causes and spread;Aftermath
+112|H|Colonial Cities|Presidency cities;Town planning;Urban society
+112|H|Mahatma Gandhi and the Nationalist Movement|Gandhi's methods;Non-cooperation and Dandi;Quit India
+112|H|Understanding Partition|Causes;Violence and displacement;Memory
+112|H|Framing the Constitution|Constituent Assembly;Debates;Features
+112|G|Human Geography: Nature and Scope|Meaning;Branches;Human-nature relation
+112|G|The World Population|Distribution and density;Growth;Demographic transition
+112|G|Population Composition|Age and sex;Rural and urban;Literacy
+112|G|Human Development|Concept;Indicators;International comparisons
+112|G|Primary Activities|Hunting and gathering;Agriculture;Mining
+112|G|Secondary Activities|Manufacturing;Types of industry;Industrial regions
+112|G|Tertiary and Quaternary Activities|Trade;Services;Quaternary and quinary
+112|G|Transport and Communication|Roads and railways;Water and air;Communication
+112|G|International Trade|Basis of trade;Balance of trade;Trade organisations
+112|G|Human Settlements|Types of settlements;Rural and urban;Urbanisation
+112|g|Population: Distribution, Density, Growth and Composition|Distribution;Growth;Composition
+112|g|Migration: Types, Causes and Consequences|Types;Causes;Consequences
+112|g|Human Development|Indicators;Regional patterns;Issues
+112|g|Human Settlements|Settlement types;Urban patterns;Problems
+112|g|Land Resources and Agriculture|Land use;Types of agriculture;Problems
+112|g|Water Resources|Availability;Irrigation;Water conservation
+112|g|Mineral and Energy Resources|Minerals;Energy sources;Conservation
+112|g|Manufacturing Industries|Types of industry;Location factors;Industrial regions
+112|g|Planning and Sustainable Development in Indian Context|Planning;Sustainable development;Case studies
+112|g|Transport and Communication|Roads and railways;Pipelines;Communication
+112|g|International Trade|India's trade;Ports;Tourism
+112|g|Geographical Perspective on Selected Issues and Problems|Environmental pollution;Urbanisation issues;Land degradation
+112|O|The Cold War Era|Superpowers;Cold War arenas;Non-Aligned Movement
+112|O|The End of Bipolarity|Soviet collapse;Shock therapy;India and Russia
+112|O|US Hegemony in World Politics|Gulf wars;Hegemony;Constraints
+112|O|Alternative Centres of Power|European Union;ASEAN;Rise of China
+112|O|Contemporary South Asia|The region;Democracy;India and Pakistan
+112|O|International Organisations|United Nations;Reform;India and the UN
+112|O|Security in the Contemporary World|Traditional security;Non-traditional security;Cooperation
+112|O|Environment and Natural Resources|Global environment;Resources;Indigenous voices
+112|O|Globalisation|Meaning;Impacts;Resistance
+112|O|Challenges of Nation-Building|Partition;Princely states;Reorganisation of states
+112|O|Era of One-Party Dominance|First elections;Congress dominance;Opposition
+112|O|Politics of Planned Development|Planning;Five-Year Plans;Debates
+112|O|India's External Relations|Non-alignment;Wars;Nuclear policy
+112|O|Challenges to and Restoration of the Congress System|After Nehru;1967 elections;Split
+112|O|The Crisis of Democratic Order|JP movement;Emergency;Post-Emergency
+112|O|Rise of Popular Movements|Chipko;Farmers' movements;Women's movements
+112|O|Regional Aspirations|Punjab and Kashmir;North-East;Autonomy
+112|O|Recent Developments in Indian Politics|Coalitions;Mandal;Ayodhya
+112|E|Macroeconomics: Introduction|Macroeconomics;Circular flow;Basic concepts
+112|E|National Income Accounting|GDP;Methods;Real and nominal
+112|E|Money and Banking|Functions of money;Commercial banks;Central bank
+112|E|Determination of Income and Employment|Aggregate demand;Multiplier;Equilibrium
+112|E|Government Budget and the Economy|Budget;Deficits;Fiscal policy
+112|E|Open Economy Macroeconomics|Balance of payments;Exchange rates;Foreign exchange market
+112|E|Microeconomics: Introduction|Microeconomics;Central problems;Types of economy
+112|E|Theory of Consumer Behaviour|Utility;Indifference curve;Demand
+112|E|Production and Costs|Production function;Costs;Revenue
+112|E|The Theory of the Firm under Perfect Competition|Perfect competition;Profit maximisation;Supply
+112|E|Market Equilibrium|Equilibrium;Price changes;Shifts
+112|E|Non-Competitive Markets|Monopoly;Monopolistic competition;Oligopoly`;
+var PFX={S:'',P:'Physics · ',C:'Chemistry · ',B:'Biology · ',H:'History · ',G:'Geography · ',g:'Geography (India) · ',O:'Political Science · ',E:'Economics · '};
+function CL(c){return c>100?'Class '+(c-100)+' · Social Science':'Class '+c}
+var PUB=null,PENC={},TOK='',LAZY=false,LOADED={},PCL=[6,7,8,9,10,11,12,106,107,108,109,110,111,112];try{TOK=localStorage.getItem('nch_tk')||''}catch(e){}
 var LD={};function dedupe(){var rm=0;CLASSES.forEach(function(c){var L=D[c];if(!L)return;var best={},ord=[];function sc(x){var n=(x.price||x.pw||x.lk)?1:0;(x.subs||[]).forEach(function(s){n+=(s.body?1:0)+((s.files||[]).length)});return n}L.forEach(function(x){var b=best[x.name];if(!b){best[x.name]=x;ord.push(x.name)}else if(sc(x)>sc(b))best[x.name]=x});D[c]=ord.map(function(n){return best[n]});rm+=L.length-D[c].length});return rm}
 function loadDef(){LD={k:{}};DEF.split('\n').forEach(function(l){var p=l.split('|'),c=+p[0];if(LD.k[c]===undefined)LD.k[c]=!!(D[c]&&D[c].length);if(LD.k[c])return;(D[c]=D[c]||[]).push({id:++IDC,name:PFX[p[1]]+p[2],subs:p[3].split(';').map(function(n){return{id:++IDC,name:n,body:'',files:[]}})})});}
 var PEND=null,PMSG='',NT='';function ask(m,f){PEND=f;PMSG=m;render()}function yes(){var f=PEND;PEND=null;f()}function no(){PEND=null;render()}
@@ -199,8 +419,9 @@ async function dbits(pw,salt){var m=await crypto.subtle.importKey('raw',TE.encod
 async function mtag(bits){var x=new Uint8Array(33);x.set(bits);x[32]=1;var h=new Uint8Array(await crypto.subtle.digest('SHA-256',x));return Array.from(h.slice(0,4)).map(function(b){return ('0'+b.toString(16)).slice(-2)}).join('')}
 async function aes(raw,mode,iv,data){var k=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,[mode]);return new Uint8Array(await crypto.subtle[mode]({name:'AES-GCM',iv:iv},k,data))}
 function pwl(p){return String(p||'').split(/[,\n]+/).map(function(x){return x.trim()}).filter(Boolean)}
-async function encM(pws,obj,salt,cache){var K=crypto.getRandomValues(new Uint8Array(32)),iv=crypto.getRandomValues(new Uint8Array(12)),ct=await aes(K,'encrypt',iv,TE.encode(JSON.stringify(obj))),w=[];
- for(var i=0;i<pws.length;i++){var bits=cache[pws[i]]||(cache[pws[i]]=await dbits(pws[i],salt)),wi=crypto.getRandomValues(new Uint8Array(12)),wk=await aes(bits,'encrypt',wi,K);w.push({t:await mtag(bits),i:b2s(wi),k:b2s(wk)})}
+async function sh(p){return new Uint8Array(await crypto.subtle.digest('SHA-256',TE.encode(p.join('\u0001'))))}
+async function encM(pws,obj,salt,cache,seed){var js=JSON.stringify(obj),K=await sh([seed,'K',js,pws.join('\u0002')]),iv=(await sh([seed,'I',js])).slice(0,12),ct=await aes(K,'encrypt',iv,TE.encode(js)),w=[];
+ for(var i=0;i<pws.length;i++){var bits=cache[pws[i]]||(cache[pws[i]]=await dbits(pws[i],salt)),wi=(await sh([seed,'W',pws[i],b2s(K)])).slice(0,12),wk=await aes(bits,'encrypt',wi,K);w.push({t:await mtag(bits),i:b2s(wi),k:b2s(wk)})}
  return{s:b2s(salt),i:b2s(iv),c:b2s(ct),w:w}}
 async function decM(pw,E){var bits=await dbits(pw,s2b(E.s)),t=await mtag(bits),w=E.w.find(function(x){return x.t===t});if(!w)throw new Error('bad');var K=await aes(bits,'decrypt',s2b(w.i),s2b(w.k));return JSON.parse(TD.decode(await aes(K,'decrypt',s2b(E.i),s2b(E.c))))}
 function dec2(pw,E){return typeof E==='string'?decr(pw,E):decM(pw,E)}
@@ -211,7 +432,7 @@ async function unlock(pw,first){
   PW=pw;U=true;try{localStorage.setItem('nch_pw',pw)}catch(e){}
   S.edit=OWNER;
   if(OWNER){try{var d=localStorage.getItem('nch_draft');if(d){D=JSON.parse(d);DIRTY=true}}catch(e){}
-   if(dedupe())dd();if(!hasData()){loadDef();dd()}}
+   if(dedupe())dd();if(!hasData()||!D._ss){D._ss=1;loadDef();dd()}}
   render();
  }catch(e){msg('Wrong password')}
 }
@@ -220,26 +441,30 @@ async function gsha(bytes){var pre=TE.encode('blob '+bytes.length+'\0'),all=new 
 async function gh(path,obj){var base='https://api.github.com/repos/maa734061-creator/NCERT-Hb/contents/'+path,h={Authorization:'Bearer '+TOK,Accept:'application/vnd.github+json'},bytes=TE.encode(JSON.stringify(obj)),mine=await gsha(bytes),content=b2s(bytes);
  for(var t=0;t<2;t++){var sha;try{var g=await fetch(base+'?ref=main&t='+Date.now(),{headers:h});if(g.ok)sha=(await g.json()).sha}catch(e){}
   if(sha&&sha===mine)return;
-  var res=await fetch(base,{method:'PUT',headers:h,body:JSON.stringify({message:'Update from teacher app',content:content,sha:sha,branch:'main'})});
+  var ac=new AbortController(),tm=setTimeout(function(){ac.abort()},240000),res;try{res=await fetch(base,{method:'PUT',signal:ac.signal,headers:h,body:JSON.stringify({message:'Update from teacher app',content:content,sha:sha,branch:'main'})})}catch(e){clearTimeout(tm);throw new Error('Upload took too long or the internet dropped. Use Wi-Fi and tap Publish again.')}clearTimeout(tm);
   if(res.ok)return;if((res.status!==409&&res.status!==422)||t===1)throw new Error(res.status+' '+(await res.text()).slice(0,100))}}
+function rpw(){var a='abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789',r='',b=crypto.getRandomValues(new Uint8Array(8));for(var i=0;i<8;i++)r+=a[b[i]%a.length];return r}
+function genAll(){var n=0,t=0;CLASSES.forEach(function(c){chs(c).forEach(function(ch){if(!pwl(ch.pw).length){ch.pw=rpw();n++}ch.price='\u20b9'+(c>100?c-100:c);t++})});dd();NT='Done. '+t+' chapters priced (class number in rupees). '+n+' new passwords made. Open the passwords list, then tap Publish.';render()}
+function pwText(){var o=[];CLASSES.forEach(function(c){var L=chs(c);if(!L.length)return;o.push('== '+CL(c)+' ==');L.forEach(function(ch,i){var t=(i+1)+'. '+ch.name+' | '+(ch.price||'-')+' | '+(ch.pw||'-');ch.subs.forEach(function(s){if(s.pw)t+='\n      topic: '+s.name+' | '+(s.price||'-')+' | '+s.pw});o.push(t)});o.push('')});return o.join('\n')}
 async function testGh(){if(!TOK){NT='Log in first.';render();return}NT='Testing, please wait...';render();try{await gh('check.json',{t:Date.now()});NT='Connection OK: the token can save to GitHub.'}catch(e){var m=String((e&&e.message)||'');NT='Test failed: '+m+((m.indexOf('401')===0||m.indexOf('403')===0)?' | The token cannot write. Make a new token: only repository NCERT-Hb, Contents = Read and write.':(m.indexOf('404')===0?' | The token cannot see NCERT-Hb. Make a new token and select the repository NCERT-Hb.':''))}render()}
 async function pub(){
  try{
   if(!TOK){NT='GitHub token missing. Log in again with the token.';render();return}
-  NT='Preparing, please wait...';render();var GS=crypto.getRandomValues(new Uint8Array(16)),cache={},files=[];
+  NT='Preparing, please wait...';render();var GS=(await sh([PW,'salt'])).slice(0,16),cache={},files=[];
   for(var i=0;i<CLASSES.length;i++){var k=CLASSES[i],cl=[],ev={};
    for(var j=0;j<chs(k).length;j++){var ch=chs(k)[j],o={id:ch.id,name:ch.name,price:ch.price||'',subs:[]};if(pwl(ch.pw).length)o.lk=1;
     var m={};
     for(var q=0;q<ch.subs.length;q++){var s=ch.subs[q],r={id:s.id,name:s.name};if(s.price)r.price=s.price;var cont={body:s.body||'',files:s.files||[]};m[s.id]=cont;
-     if(pwl(s.pw).length){r.lk=1;r.sp=1;ev['s'+s.id]=await encM(pwl(s.pw),cont,GS,cache)}else if(pwl(ch.pw).length){r.lk=1}else{r.body=cont.body;r.files=cont.files}
+     if(pwl(s.pw).length){r.lk=1;r.sp=1;ev['s'+s.id]=await encM(pwl(s.pw),cont,GS,cache,PW)}else if(pwl(ch.pw).length){r.lk=1}else{r.body=cont.body;r.files=cont.files}
      o.subs.push(r)}
-    if(pwl(ch.pw).length)ev[ch.id]=await encM(pwl(ch.pw),m,GS,cache);
+    if(pwl(ch.pw).length)ev[ch.id]=await encM(pwl(ch.pw),m,GS,cache,PW);
     cl.push(o)}
    files.push(['c'+k+'.json',{cl:cl,e:ev}])}
   var enc=await encr(PW,D),total=files.length+2,n=0;
   for(var f=0;f<files.length;f++){NT='Publishing '+(++n)+' of '+total+'...';render();await gh(files[f][0],files[f][1])}
   NT='Publishing '+(++n)+' of '+total+'...';render();
   await gh('data.json',{m:{contact:D._contact||'',wa:D._wa||'',qr:D._qr||'',how:D._how||''},cls:CLASSES,v:Date.now()});
+  NT='Publishing '+(++n)+' of '+total+' (biggest file, can take 1-2 minutes, please wait)...';render();
   await gh('own.json',{c:enc});
   try{localStorage.removeItem('nch_draft')}catch(e){}
   DIRTY=false;NT='Published. Students will see it in 1-2 minutes.';render();
@@ -251,7 +476,7 @@ async function tlLogin(){
  msg('Checking, please wait...');
  try{var r=await fetch('own.json?t='+Date.now());SEED=(await r.json()).c||''}catch(e){msg('Could not load data. Check internet.');return}
  if(!SEED){if(pw.length<10){msg('Choose a NEW password, at least 10 characters');return}
-  OWNER=true;U=true;S.edit=true;PW=pw;if(LAZY){for(var z=0;z<PCL.length;z++){if(!LOADED[PCL[z]])await loadClass(PCL[z])}}D=JSON.parse(JSON.stringify(LAZY?D:(PUB&&PUB.cl?PUB.cl:{})));D._contact=(PUB&&PUB.contact)||'';D._wa=(PUB&&PUB.wa)||'';D._qr=(PUB&&PUB.qr)||'';TOK=tk;DIRTY=true;
+  OWNER=true;U=true;S.edit=true;PW=pw;if(LAZY){for(var z=0;z<PCL.length;z++){if(!LOADED[PCL[z]])await loadClass(PCL[z])}}D=JSON.parse(JSON.stringify(LAZY?D:(PUB&&PUB.cl?PUB.cl:{})));D._contact=(PUB&&PUB.contact)||'';D._wa=(PUB&&PUB.wa)||'';D._qr=(PUB&&PUB.qr)||'';if(!D._ss){D._ss=1;loadDef()}TOK=tk;DIRTY=true;
   try{localStorage.setItem('nch_tk',tk);localStorage.setItem('nch_pw',pw)}catch(e){}
   V={v:'home'};NT='New password set. Make your edits, then tap Publish to save it.';render();return}
  OWNER=true;PW='';await unlock(pw,false);
@@ -297,7 +522,7 @@ async function bulkAdd(inp){var fs=Array.from(inp.files),n=0,sk=0;for(var i=0;i<
 var REC=null,RCH=[];
 async function recStart(){if(REC)return;try{var s=await navigator.mediaDevices.getUserMedia({audio:true});RCH=[];REC=new MediaRecorder(s);REC.ondataavailable=function(e){if(e.data.size)RCH.push(e.data)};REC.onstop=async function(){s.getTracks().forEach(function(t){t.stop()});var b=new Blob(RCH,{type:REC.mimeType||'audio/webm'});REC=null;if(!TOK){NT='Please log in as teacher first.';render();return}NT='Uploading voice note, please wait...';render();try{var ext=(b.type||'').indexOf('mp4')>-1?'m4a':'webm',pth=await ghFile(new File([b],'voice.'+ext)),x=sub();x.files=x.files||[];x.files.push({id:'F'+(++IDC),name:'Voice note '+new Date().toLocaleString(),t:'audio',url:pth});dd();NT='Voice note uploaded. Tap Publish to show students.';render()}catch(e){NT='Upload failed: '+((e&&e.message)||'');render()}};REC.start();render()}catch(e){NT='Microphone is blocked here. Use the Phone recorder button instead.';render()}}
 function recStop(){if(REC)REC.stop()}
-function askT(){var w=((PUB&&PUB.wa)||D._wa||'').trim();if(!w){NT='Teacher has not added a contact yet.';render();return}var t='Doubt from NCERT Education Hub';if(V.c)t+=': Class '+V.c;try{if(V.h)t+=', '+chp().name;if(V.s)t+=', '+sub().name}catch(e){}t+='. My question: ';var u;if(w.indexOf('http')===0)u=w;else if(w.indexOf('@')>0)u='mailto:'+w+'?subject='+encodeURIComponent(t);else u='https://wa.me/'+w.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(t);var a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+function askT(){var w=((PUB&&PUB.wa)||D._wa||'').trim();if(!w){NT='Teacher has not added a contact yet.';render();return}var t='Doubt from NCERT Education Hub';if(V.c)t+=': '+CL(V.c);try{if(V.h)t+=', '+chp().name;if(V.s)t+=', '+sub().name}catch(e){}t+='. My question: ';var u;if(w.indexOf('http')===0)u=w;else if(w.indexOf('@')>0)u='mailto:'+w+'?subject='+encodeURIComponent(t);else u='https://wa.me/'+w.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(t);var a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
 function mu(f){if(!f.data)return f.url||('/_blob/'+f.id);var M={m4a:'audio/mp4',mp4:'video/mp4',mp3:'audio/mpeg',wav:'audio/wav',aac:'audio/aac',ogg:'audio/ogg',oga:'audio/ogg',webm:f.t==='video'?'video/webm':'audio/webm'},m=M[((f.name||'').split('.').pop()||'').toLowerCase()];return m?f.data.replace(/^data:[^,]*,/,'data:'+m+';base64,'):f.data}
 async function qrUp(inp){var f=inp.files[0];if(!f)return;if(f.size>1500000){NT='Image is too big (max 1.5 MB).';render();return}D._qr=await rd(f);dd();NT='QR image saved. Tap Publish.';render()}
 async function ghFile(f){var ext=((f.name.split('.').pop())||'bin').toLowerCase().replace(/[^a-z0-9]/g,'')||'bin',path='media/'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+'.'+ext;
@@ -327,15 +552,16 @@ function render(){
  if(!U&&V.v!=='pri'&&V.v!=='tl'){a.innerHTML=lockHtml();return}
  ['home','set','pri'].forEach(function(k){document.getElementById('n-'+k).className=(V.v===k||(k==='home'&&['cls','ch','sub'].indexOf(V.v)>-1))?'on':''});
  var bn=(OWNER&&DIRTY)?'<div class="row" style="background:var(--pr);color:#fff"><span>Changes not published yet</span><button class="btn sec" onclick="pub()">Publish</button></div>':'';
- if(V.v==='home'){h='<h2>Choose your class</h2><p class="mu">Science · NCERT</p><div class="grid">'+CLASSES.map(function(c){return '<div class="card big" onclick="go({v:\'cls\',c:'+c+'})">Class '+c+'</div>'}).join('')+'</div>'}
+ if(V.v==='home'){var tile=function(c){return '<div class="card big" onclick="go({v:\'cls\',c:'+c+'})">Class '+(c>100?c-100:c)+'</div>'},showSS=OWNER||PCL.indexOf(106)>-1||(D[106]&&D[106].length);h='<h2>Choose your class</h2><h3>Science</h3><div class="grid">'+[6,7,8,9,10,11,12].map(tile).join('')+'</div>'+(showSS?'<h3 style="margin-top:22px">Social Science</h3><div class="grid">'+[106,107,108,109,110,111,112].map(tile).join('')+'</div>':'')}
  else if(V.v==='cls'&&LAZY&&!OWNER&&!LOADED[V.c]){h='<p class="mu">Loading, please wait...</p>'}
- else if(V.v==='cls'){var L=chs(V.c);h='<span class="crumb" onclick="go({v:\'home\'})">← Home</span><h2>Class '+V.c+' · Science chapters</h2>'+addBox('New chapter name','addCh')+(L.length?L.map(function(x,i){return '<div class="row"><span onclick="go({v:\'ch\',c:'+V.c+',h:'+x.id+'})">'+(i+1)+'. '+esc(x.name)+(x.lk||x.pw?' 🔒':'')+(x.price?' <small class="mu">'+esc(x.price)+'</small>':'')+'</span>'+(S.edit?'<button class="del" onclick="delCh('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No chapters yet.</p>')}
- else if(V.v==='ch'){var C=chp();h='<span class="crumb" onclick="go({v:\'cls\',c:'+V.c+'})">← Class '+V.c+'</span><h2>'+esc(C.name)+'</h2>'+accBox(C)+addBox('New sub-topic','addSub')+(C.subs.length?C.subs.map(function(x,i){return '<div class="row"><span '+(false?'':'onclick="go({v:\'sub\',c:'+V.c+',h:'+V.h+',s:'+x.id+'})"')+'>'+(i+1)+'. '+esc(x.name)+((x.files&&x.files.length)||x.body?' ✓':'')+((x.lk&&!x.open)?' \ud83d\udd12'+(x.price?' <small class="mu">'+esc(x.price)+'</small>':''):'')+'</span>'+(S.edit?'<button class="del" onclick="delSub('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No sub-topics yet.</p>')}
+ else if(V.v==='cls'){var L=chs(V.c);h='<span class="crumb" onclick="go({v:\'home\'})">← Home</span><h2>'+CL(V.c)+' · chapters</h2>'+addBox('New chapter name','addCh')+(L.length?L.map(function(x,i){return '<div class="row"><span onclick="go({v:\'ch\',c:'+V.c+',h:'+x.id+'})">'+(i+1)+'. '+esc(x.name)+(x.lk||x.pw?' 🔒':'')+(x.price?' <small class="mu">'+esc(x.price)+'</small>':'')+'</span>'+(S.edit?'<button class="del" onclick="delCh('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No chapters yet.</p>')}
+ else if(V.v==='ch'){var C=chp();h='<span class="crumb" onclick="go({v:\'cls\',c:'+V.c+'})">← '+CL(V.c)+'</span><h2>'+esc(C.name)+'</h2>'+accBox(C)+addBox('New sub-topic','addSub')+(C.subs.length?C.subs.map(function(x,i){return '<div class="row"><span '+(false?'':'onclick="go({v:\'sub\',c:'+V.c+',h:'+V.h+',s:'+x.id+'})"')+'>'+(i+1)+'. '+esc(x.name)+((x.files&&x.files.length)||x.body?' ✓':'')+((x.lk&&!x.open)?' \ud83d\udd12'+(x.price?' <small class="mu">'+esc(x.price)+'</small>':''):'')+'</span>'+(S.edit?'<button class="del" onclick="delSub('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No sub-topics yet.</p>')}
  else if(V.v==='sub'){var T=sub();h='<span class="crumb" onclick="go({v:\'ch\',c:'+V.c+',h:'+V.h+'})">← '+esc(chp().name)+'</span><h2>'+esc(T.name)+'</h2>'+subAcc(T)+
   (S.edit?'<h3>Notes</h3><textarea id="bd" placeholder="Write notes here...">'+esc(T.body)+'</textarea><p><button class="btn" onclick="saveBody()">Save notes</button> <span id="ok" class="mu"></span></p><p><button class="btn" onclick="recStart()">🎙 Record</button> <label class="btn sec" style="display:inline-block">🎙 Phone recorder<input type="file" accept="audio/*" capture hidden onchange="up(\'audio\',this)"></label> <label class="btn sec" style="display:inline-block">＋ Audio<input type="file" accept="audio/*" hidden onchange="up(\'audio\',this)"></label> <label class="btn sec" style="display:inline-block">＋ PDF<input type="file" accept="application/pdf" hidden onchange="up(\'pdf\',this)"></label> <label class="btn sec" style="display:inline-block">＋ Video<input type="file" accept="video/*" hidden onchange="up(\'video\',this)"></label></p><div class="add"><input id="lk" placeholder="Paste a video / website link (YouTube, Drive...)"><button class="btn sec" onclick="addLink()">Add link</button></div>':(T.body?'<div style="white-space:pre-wrap;margin-bottom:14px">'+esc(T.body)+'</div>':''))+filesHtml(T)+((!S.edit&&!T.body&&!(T.files&&T.files.length)&&!(T.lk&&!T.open))?'<p class="mu">Nothing added yet.</p>':'')}
  else if(V.v==='set'){h='<h2>Settings</h2><div class="set"><span>Theme</span><select id="th" onchange="S.theme=this.value;sv();applyS()"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="set"><span>Text size</span><input type="range" min="14" max="22" value="'+S.fs+'" style="width:50%" oninput="S.fs=+this.value;sv();applyS()"></div>'+
-  (OWNER?'<div class="set"><span>Edit mode</span><input type="checkbox" style="width:auto" '+(S.edit?'checked':'')+' onchange="S.edit=this.checked;sv()"></div><div class="set"><input id="np" type="text" placeholder="New password" style="width:60%"><button class="btn sec" onclick="setPw()">Change</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Buying instructions for students (optional)</span><textarea id="how" style="min-height:90px;margin:6px 0" placeholder="Leave empty to show the default 4 steps">'+esc(D._how||'')+'</textarea><button class="btn sec" onclick="D._how=document.getElementById(\'how\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><span>Payment QR image</span><label class="btn sec">Choose<input type="file" accept="image/*" hidden onchange="qrUp(this)"></label></div><div class="set"><input id="wa" placeholder="Contact: WhatsApp number (919876543210), Telegram link (https://t.me/name) or email" value="'+esc(D._wa||'')+'" style="width:65%"><button class="btn sec" onclick="D._wa=document.getElementById(\'wa\').value.trim();dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><input id="ct" placeholder="Contact / payment info for students" value="'+esc(D._contact||'')+'" style="width:65%"><button class="btn sec" onclick="D._contact=document.getElementById(\'ct\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Share link for students</span><input readonly value="'+LINK+'" onclick="this.select()" style="margin:6px 0"><button class="btn" onclick="copyLink()">Copy link</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Bulk add notes PDFs (Class9-Ch...)</span><input type="file" accept=".pdf,application/pdf" multiple onchange="bulkAdd(this)" style="margin-top:8px"></div><div class="set"><span>Load NCERT chapter list</span><button class="btn sec" onclick="loadAll()">Load</button></div><div class="set"><span>Test GitHub connection</span><button class="btn sec" onclick="testGh()">Test</button></div><div class="set"><span>Publish for students</span><button class="btn" onclick="pub()">Publish</button></div>':'')+
-  ''+(OWNER?'<div class="set"><span>Log out</span><button class="btn sec" onclick="logout()">Log out</button></div>':'<div class="set"><span>Forget saved chapter passwords</span><button class="btn sec" onclick="try{localStorage.removeItem(\'nch_cp\')}catch(e){}NT=\'Done. Reopen the app.\';render()">Forget</button></div>')+''+(OWNER?'':'<div class="set"><span>Teacher login</span><button class="btn sec" onclick="go({v:\'tl\'})">Login</button></div>')+'<div class="set" style="flex-direction:column;align-items:stretch"><span>Install on your phone</span><span class="mu">Open the browser menu and tap Add to Home screen (or Install app).</span></div><p class="mu">App version 3.1</p>'}
+  (OWNER?'<div class="set"><span>Edit mode</span><input type="checkbox" style="width:auto" '+(S.edit?'checked':'')+' onchange="S.edit=this.checked;sv()"></div><div class="set"><input id="np" type="text" placeholder="New password" style="width:60%"><button class="btn sec" onclick="setPw()">Change</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Buying instructions for students (optional)</span><textarea id="how" style="min-height:90px;margin:6px 0" placeholder="Leave empty to show the default 4 steps">'+esc(D._how||'')+'</textarea><button class="btn sec" onclick="D._how=document.getElementById(\'how\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><span>Payment QR image</span><label class="btn sec">Choose<input type="file" accept="image/*" hidden onchange="qrUp(this)"></label></div><div class="set"><input id="wa" placeholder="Contact: WhatsApp number (919876543210), Telegram link (https://t.me/name) or email" value="'+esc(D._wa||'')+'" style="width:65%"><button class="btn sec" onclick="D._wa=document.getElementById(\'wa\').value.trim();dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><input id="ct" placeholder="Contact / payment info for students" value="'+esc(D._contact||'')+'" style="width:65%"><button class="btn sec" onclick="D._contact=document.getElementById(\'ct\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Share link for students</span><input readonly value="'+LINK+'" onclick="this.select()" style="margin:6px 0"><button class="btn" onclick="copyLink()">Copy link</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Bulk add notes PDFs (Class9-Ch...)</span><input type="file" accept=".pdf,application/pdf" multiple onchange="bulkAdd(this)" style="margin-top:8px"></div><div class="set"><span>Load NCERT chapter list</span><button class="btn sec" onclick="loadAll()">Load</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Prices and passwords for all chapters</span><span class="mu">Price = class number in rupees. A different password is made for every chapter that has none.</span><button class="btn" style="margin-top:8px" onclick="genAll()">Make prices and passwords</button><button class="btn sec" style="margin-top:8px" onclick="go({v:\'pws\'})">Show passwords list</button></div><div class="set"><span>Test GitHub connection</span><button class="btn sec" onclick="testGh()">Test</button></div><div class="set"><span>Publish for students</span><button class="btn" onclick="pub()">Publish</button></div>':'')+
+  ''+(OWNER?'<div class="set"><span>Log out</span><button class="btn sec" onclick="logout()">Log out</button></div>':'<div class="set"><span>Forget saved chapter passwords</span><button class="btn sec" onclick="try{localStorage.removeItem(\'nch_cp\')}catch(e){}NT=\'Done. Reopen the app.\';render()">Forget</button></div>')+''+(OWNER?'':'<div class="set"><span>Teacher login</span><button class="btn sec" onclick="go({v:\'tl\'})">Login</button></div>')+'<div class="set" style="flex-direction:column;align-items:stretch"><span>Install on your phone</span><span class="mu">Open the browser menu and tap Add to Home screen (or Install app).</span></div><p class="mu">App version 3.4</p>'}
+ else if(V.v==='pws'&&OWNER){h='<span class="crumb" onclick="go({v:\'set\'})">&larr; Settings</span><h2>Passwords and prices</h2><p class="mu">Only you can see this. Tap the box, then copy. Do not share this screen.</p><textarea readonly style="min-height:460px;font-size:13px" onclick="this.select()">'+esc(pwText())+'</textarea>'}
  else if(V.v==='tl'){var sp='';try{sp=localStorage.getItem('nch_pw')||''}catch(e){}h='<h2>Teacher login</h2><input id="tpw" type="password" placeholder="Your teacher password" value="'+esc(sp)+'" style="margin-bottom:8px"><input id="ttk" type="password" placeholder="GitHub token (github_pat_...)" value="'+esc(TOK)+'"><p><button class="btn" onclick="tlLogin()">Login</button></p><p id="lm" style="color:var(--dn)"></p><p class="mu">The token is saved only on this phone.</p>'}
  else{h='<h2>Privacy Policy</h2><p>NCERT Education Hub does not ask for personal information such as your name, phone number or email.</p><p>Content opens only with the password your teacher gives you. Your password, settings and listening counts are saved only on your phone, and logging out removes the password.</p><p>Payments happen outside this app. The app does not see or store any payment details.</p><p>The app has no ads and no tracking.</p>'+((PUB&&PUB.contact)?'<p class="mu">Contact: '+esc(PUB.contact)+'</p>':'')}
  var cfb=PEND?'<div class="row"><span>'+PMSG+'</span><button class="btn" onclick="yes()">Yes</button><button class="btn sec" onclick="no()">No</button></div>':(REC?'<div class="row"><span>🔴 Recording...</span><button class="btn" onclick="recStop()">Stop and save</button></div>':NT?'<div class="row"><span>'+esc(NT)+'</span><button class="btn sec" onclick="NT=\'\';render()">OK</button></div>':'');a.innerHTML=cfb+bn+h;
