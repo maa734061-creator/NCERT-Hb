@@ -42,68 +42,68 @@ nav button.on{color:var(--pr);font-weight:600}
 <nav><button id="n-home" onclick="go({v:'home'})" class="on">🏠 Home</button><button id="n-set" onclick="go({v:'set'})" class="">⚙️ Settings</button><button id="n-ask" onclick="askT()">💬 Ask</button><button id="n-pri" onclick="go({v:'pri'})" class="">🔒 Privacy</button></nav>
 <script>
 var CLASSES=[6,7,8,9,10,11,12,106,107,108,109,110,111,112],D={},S={edit:true,theme:'auto',fs:16},V={v:'home'},U=false,OWNER=false,PW='',DIRTY=false,TE=new TextEncoder(),TD=new TextDecoder(),SEED='',IDC=Date.now();
-var DEF=`6|S|The Wonderful World of Science|What is science;Scientific method;Science around us
-6|S|Diversity in the Living World|Grouping living things;Plants and their types;Animals and their types
-6|S|Mindful Eating: A Path to a Healthy Body|Food sources and parts;Nutrients and balanced diet;Healthy eating habits
-6|S|Exploring Magnets|Magnetic and non-magnetic materials;Poles and properties;Uses of magnets
-6|S|Measurement of Length and Motion|Measuring length;Units and SI system;Types of motion
-6|S|Materials Around Us|Properties of materials;Grouping materials;Transparent, opaque, translucent
-6|S|Temperature and its Measurement|Hot and cold;Thermometers;Measuring temperature
-6|S|A Journey through States of Water|States of water;Water cycle;Evaporation and condensation
-6|S|Methods of Separation in Everyday Life|Handpicking and sieving;Filtration and decantation;Evaporation
-6|S|Living Creatures: Exploring their Characteristics|Habitat and adaptation;Characteristics of living things;Responding to surroundings
-6|S|Nature's Treasures|Natural resources;Air, water and soil;Conservation
-6|S|Beyond Earth|Stars and constellations;Solar system;Earth's movements
-7|S|The Ever-Evolving World of Science|Science and its methods;Curiosity and investigation;Science and society
-7|S|Exploring Substances: Acidic, Basic, and Neutral|Acids and bases;Indicators;Neutralisation
-7|S|Electricity: Circuits and Their Components|Electric circuits;Components and symbols;Conductors and insulators
-7|S|The World of Metals and Non-metals|Physical properties;Chemical properties;Uses
-7|S|Changes Around Us: Physical and Chemical|Physical changes;Chemical changes;Rusting and crystallisation
-7|S|Adolescence: A Stage of Growth and Change|Changes at puberty;Hormones;Health and hygiene
-7|S|Heat Transfer in Nature|Conduction;Convection;Radiation
-7|S|Measurement of Time and Motion|Measuring time;Speed;Distance-time graph
-7|S|Life Processes in Animals|Nutrition and digestion;Respiration;Circulation and excretion
-7|S|Life Processes in Plants|Photosynthesis;Transport in plants;Reproduction in plants
-7|S|Light: Shadows and Reflections|Shadows;Reflection;Pinhole camera
-7|S|Earth, Moon, and the Sun|Rotation and revolution;Phases of the Moon;Eclipses
-8|S|Exploring the Investigative World of Science|Scientific investigation;Observation and experiments;Science in daily life
-8|S|The Invisible Living World: Beyond Our Naked Eye|Microscope;Cells;Microorganisms
-8|S|Health: The Ultimate Treasure|Health and hygiene;Diseases;Prevention and vaccines
-8|S|Electricity: Magnetic and Heating Effects|Magnetic effect;Electromagnets;Heating effect
-8|S|Exploring Forces|Types of forces;Friction;Contact and non-contact forces
-8|S|Pressure, Winds, Storms, and Cyclones|Pressure;Atmospheric pressure and winds;Storms and cyclones
-8|S|Particulate Nature of Matter|Particles of matter;States of matter;Diffusion
-8|S|Nature of Matter: Elements, Compounds, and Mixtures|Elements;Compounds;Mixtures
-8|S|The Amazing World of Solutes, Solvents, and Solutions|Solutes and solvents;Solubility;Concentration
-8|S|Light: Mirrors and Lenses|Mirrors;Lenses;Images
-8|S|Keeping Time with the Skies|Sun and time;Moon and calendar;Stars
-8|S|How Nature Works in Harmony|Ecosystem;Food chains;Interdependence
-8|S|Our Home: Earth, a Unique Life Sustaining Planet|Layers of Earth;Atmosphere;Conditions for life
-9|S|Matter in Our Surroundings|States of matter;Change of state;Evaporation
-9|S|Is Matter Around Us Pure?|Mixtures;Solutions and colloids;Separation methods
-9|S|Atoms and Molecules|Laws of chemical combination;Atomic and molecular mass;Mole concept
-9|S|Structure of the Atom|Subatomic particles;Atomic models;Electronic configuration
-9|S|The Fundamental Unit of Life|Cell structure;Organelles;Prokaryotes and eukaryotes
-9|S|Tissues|Plant tissues;Animal tissues;Functions of tissues
-9|S|Motion|Distance and displacement;Speed and velocity;Equations of motion
-9|S|Force and Laws of Motion|Newton's laws;Momentum;Conservation of momentum
-9|S|Gravitation|Universal law of gravitation;Free fall;Buoyancy
-9|S|Work and Energy|Work;Kinetic and potential energy;Power
-9|S|Sound|Production and propagation;Characteristics of sound;Echo and SONAR
-9|S|Improvement in Food Resources|Crop improvement;Animal husbandry;Farming practices
-10|S|Chemical Reactions and Equations|Balancing equations;Types of reactions;Oxidation and reduction
-10|S|Acids, Bases and Salts|Properties of acids and bases;pH scale;Common salts
-10|S|Metals and Non-metals|Physical properties;Reactivity series;Corrosion
-10|S|Carbon and its Compounds|Covalent bonding;Homologous series;Ethanol and ethanoic acid
-10|S|Life Processes|Nutrition;Respiration;Transportation and excretion
-10|S|Control and Coordination|Nervous system;Reflex action;Hormones
-10|S|How do Organisms Reproduce?|Asexual reproduction;Sexual reproduction in plants;Human reproduction
-10|S|Heredity|Mendel's experiments;Inheritance of traits;Sex determination
-10|S|Light – Reflection and Refraction|Mirrors;Refraction;Lenses
-10|S|The Human Eye and the Colourful World|Structure of the eye;Defects of vision;Dispersion and scattering
-10|S|Electricity|Ohm's law;Resistance;Electric power
-10|S|Magnetic Effects of Electric Current|Magnetic field lines;Electromagnet and motor;Electromagnetic induction
-10|S|Our Environment|Ecosystem;Food chains;Ozone depletion and waste
+var DEF=`6|o|The Wonderful World of Science|What is science;Scientific method;Science around us
+6|b|Diversity in the Living World|Grouping living things;Plants and their types;Animals and their types
+6|b|Mindful Eating: A Path to a Healthy Body|Food sources and parts;Nutrients and balanced diet;Healthy eating habits
+6|p|Exploring Magnets|Magnetic and non-magnetic materials;Poles and properties;Uses of magnets
+6|p|Measurement of Length and Motion|Measuring length;Units and SI system;Types of motion
+6|c|Materials Around Us|Properties of materials;Grouping materials;Transparent, opaque, translucent
+6|p|Temperature and its Measurement|Hot and cold;Thermometers;Measuring temperature
+6|c|A Journey through States of Water|States of water;Water cycle;Evaporation and condensation
+6|c|Methods of Separation in Everyday Life|Handpicking and sieving;Filtration and decantation;Evaporation
+6|b|Living Creatures: Exploring their Characteristics|Habitat and adaptation;Characteristics of living things;Responding to surroundings
+6|o|Nature's Treasures|Natural resources;Air, water and soil;Conservation
+6|o|Beyond Earth|Stars and constellations;Solar system;Earth's movements
+7|o|The Ever-Evolving World of Science|Science and its methods;Curiosity and investigation;Science and society
+7|c|Exploring Substances: Acidic, Basic, and Neutral|Acids and bases;Indicators;Neutralisation
+7|p|Electricity: Circuits and Their Components|Electric circuits;Components and symbols;Conductors and insulators
+7|c|The World of Metals and Non-metals|Physical properties;Chemical properties;Uses
+7|c|Changes Around Us: Physical and Chemical|Physical changes;Chemical changes;Rusting and crystallisation
+7|b|Adolescence: A Stage of Growth and Change|Changes at puberty;Hormones;Health and hygiene
+7|p|Heat Transfer in Nature|Conduction;Convection;Radiation
+7|p|Measurement of Time and Motion|Measuring time;Speed;Distance-time graph
+7|b|Life Processes in Animals|Nutrition and digestion;Respiration;Circulation and excretion
+7|b|Life Processes in Plants|Photosynthesis;Transport in plants;Reproduction in plants
+7|p|Light: Shadows and Reflections|Shadows;Reflection;Pinhole camera
+7|o|Earth, Moon, and the Sun|Rotation and revolution;Phases of the Moon;Eclipses
+8|o|Exploring the Investigative World of Science|Scientific investigation;Observation and experiments;Science in daily life
+8|b|The Invisible Living World: Beyond Our Naked Eye|Microscope;Cells;Microorganisms
+8|b|Health: The Ultimate Treasure|Health and hygiene;Diseases;Prevention and vaccines
+8|p|Electricity: Magnetic and Heating Effects|Magnetic effect;Electromagnets;Heating effect
+8|p|Exploring Forces|Types of forces;Friction;Contact and non-contact forces
+8|p|Pressure, Winds, Storms, and Cyclones|Pressure;Atmospheric pressure and winds;Storms and cyclones
+8|c|Particulate Nature of Matter|Particles of matter;States of matter;Diffusion
+8|c|Nature of Matter: Elements, Compounds, and Mixtures|Elements;Compounds;Mixtures
+8|c|The Amazing World of Solutes, Solvents, and Solutions|Solutes and solvents;Solubility;Concentration
+8|p|Light: Mirrors and Lenses|Mirrors;Lenses;Images
+8|o|Keeping Time with the Skies|Sun and time;Moon and calendar;Stars
+8|b|How Nature Works in Harmony|Ecosystem;Food chains;Interdependence
+8|o|Our Home: Earth, a Unique Life Sustaining Planet|Layers of Earth;Atmosphere;Conditions for life
+9|c|Matter in Our Surroundings|States of matter;Change of state;Evaporation
+9|c|Is Matter Around Us Pure?|Mixtures;Solutions and colloids;Separation methods
+9|c|Atoms and Molecules|Laws of chemical combination;Atomic and molecular mass;Mole concept
+9|c|Structure of the Atom|Subatomic particles;Atomic models;Electronic configuration
+9|b|The Fundamental Unit of Life|Cell structure;Organelles;Prokaryotes and eukaryotes
+9|b|Tissues|Plant tissues;Animal tissues;Functions of tissues
+9|p|Motion|Distance and displacement;Speed and velocity;Equations of motion
+9|p|Force and Laws of Motion|Newton's laws;Momentum;Conservation of momentum
+9|p|Gravitation|Universal law of gravitation;Free fall;Buoyancy
+9|p|Work and Energy|Work;Kinetic and potential energy;Power
+9|p|Sound|Production and propagation;Characteristics of sound;Echo and SONAR
+9|b|Improvement in Food Resources|Crop improvement;Animal husbandry;Farming practices
+10|c|Chemical Reactions and Equations|Balancing equations;Types of reactions;Oxidation and reduction
+10|c|Acids, Bases and Salts|Properties of acids and bases;pH scale;Common salts
+10|c|Metals and Non-metals|Physical properties;Reactivity series;Corrosion
+10|c|Carbon and its Compounds|Covalent bonding;Homologous series;Ethanol and ethanoic acid
+10|b|Life Processes|Nutrition;Respiration;Transportation and excretion
+10|b|Control and Coordination|Nervous system;Reflex action;Hormones
+10|b|How do Organisms Reproduce?|Asexual reproduction;Sexual reproduction in plants;Human reproduction
+10|b|Heredity|Mendel's experiments;Inheritance of traits;Sex determination
+10|p|Light – Reflection and Refraction|Mirrors;Refraction;Lenses
+10|p|The Human Eye and the Colourful World|Structure of the eye;Defects of vision;Dispersion and scattering
+10|p|Electricity|Ohm's law;Resistance;Electric power
+10|p|Magnetic Effects of Electric Current|Magnetic field lines;Electromagnet and motor;Electromagnetic induction
+10|b|Our Environment|Ecosystem;Food chains;Ozone depletion and waste
 11|P|Units and Measurements|SI units;Significant figures;Dimensional analysis
 11|P|Motion in a Straight Line|Position and velocity;Acceleration;Kinematic equations
 11|P|Motion in a Plane|Vectors;Projectile motion;Circular motion
@@ -402,11 +402,16 @@ var DEF=`6|S|The Wonderful World of Science|What is science;Scientific method;Sc
 112|E|The Theory of the Firm under Perfect Competition|Perfect competition;Profit maximisation;Supply
 112|E|Market Equilibrium|Equilibrium;Price changes;Shifts
 112|E|Non-Competitive Markets|Monopoly;Monopolistic competition;Oligopoly`;
-var PFX={S:'',P:'Physics · ',C:'Chemistry · ',B:'Biology · ',H:'History · ',G:'Geography · ',g:'Geography (India) · ',O:'Political Science · ',E:'Economics · '};
+var PFX={S:'',b:'',p:'',c:'',o:'',P:'Physics · ',C:'Chemistry · ',B:'Biology · ',H:'History · ',G:'Geography · ',g:'Geography (India) · ',O:'Political Science · ',E:'Economics · '};
 function CL(c){return c>100?'Class '+(c-100)+' · Social Science':'Class '+c}
 var PUB=null,PENC={},TOK='',LAZY=false,LOADED={},PCL=[6,7,8,9,10,11,12,106,107,108,109,110,111,112];try{TOK=localStorage.getItem('nch_tk')||''}catch(e){}
 var LD={};function dedupe(){var rm=0;CLASSES.forEach(function(c){var L=D[c];if(!L)return;var best={},ord=[];function sc(x){var n=(x.price||x.pw||x.lk)?1:0;(x.subs||[]).forEach(function(s){n+=(s.body?1:0)+((s.files||[]).length)});return n}L.forEach(function(x){var b=best[x.name];if(!b){best[x.name]=x;ord.push(x.name)}else if(sc(x)>sc(b))best[x.name]=x});D[c]=ord.map(function(n){return best[n]});rm+=L.length-D[c].length});return rm}
-function loadDef(){LD={k:{}};DEF.split('\n').forEach(function(l){var p=l.split('|'),c=+p[0];if(LD.k[c]===undefined)LD.k[c]=!!(D[c]&&D[c].length);if(LD.k[c])return;(D[c]=D[c]||[]).push({id:++IDC,name:PFX[p[1]]+p[2],subs:p[3].split(';').map(function(n){return{id:++IDC,name:n,body:'',files:[]}})})});}
+var SJ={b:'B',p:'P',c:'C',o:'O',P:'P',C:'C',B:'B'},SJMAP=null,SG={};
+function sjOf(ch){if(ch.sj)return ch.sj;var n=ch.name||'';if(n.indexOf('Physics · ')===0)return 'P';if(n.indexOf('Chemistry · ')===0)return 'C';if(n.indexOf('Biology · ')===0)return 'B';if(!SJMAP){SJMAP={};DEF.split('\n').forEach(function(l){var p=l.split('|');if(SJ[p[1]])SJMAP[p[2]]=SJ[p[1]]})}return SJMAP[n]||'O'}
+function pf(n){return n.replace(/^(Physics|Chemistry|Biology) · /,'')}
+function portionBox(C){if(!(OWNER&&S.edit&&V.c<100))return '';var s=sjOf(C);return '<div class="set"><span>Portion</span><select onchange="setSj(this.value)">'+[['B','Biology'],['P','Physics'],['C','Chemistry'],['O','Other']].map(function(t){return '<option value="'+t[0]+'"'+(t[0]===s?' selected':'')+'>'+t[1]+'</option>'}).join('')+'</select></div>'}
+function setSj(v){chp().sj=v;dd();NT='Moved. Tap Publish to show students.';render()}
+function loadDef(){LD={k:{}};DEF.split('\n').forEach(function(l){var p=l.split('|'),c=+p[0];if(LD.k[c]===undefined)LD.k[c]=!!(D[c]&&D[c].length);if(LD.k[c])return;(D[c]=D[c]||[]).push({id:++IDC,name:PFX[p[1]]+p[2],sj:SJ[p[1]],subs:p[3].split(';').map(function(n){return{id:++IDC,name:n,body:'',files:[]}})})});}
 var PEND=null,PMSG='',NT='';function ask(m,f){PEND=f;PMSG=m;render()}function yes(){var f=PEND;PEND=null;f()}function no(){PEND=null;render()}
 function loadAll(){loadDef();dedupe();dd();NT='Chapters loaded. Check each class, then tap Publish.';render()}
 function hasData(){return CLASSES.some(function(c){return D[c]&&D[c].length})}
@@ -456,7 +461,7 @@ async function pub(){
   if(!TOK){NT='GitHub token missing. Log in again with the token.';render();return}
   NT='Preparing, please wait...';render();var GS=(await sh([PW,'salt'])).slice(0,16),cache={},files=[];
   for(var i=0;i<CLASSES.length;i++){var k=CLASSES[i],cl=[],ev={};NT='Preparing '+(i+1)+' of '+CLASSES.length+' (with many passwords this can take 1-3 minutes)...';render();await new Promise(function(r){setTimeout(r,0)});
-   for(var j=0;j<chs(k).length;j++){var ch=chs(k)[j],o={id:ch.id,name:ch.name,price:ch.price||'',subs:[]};if(pwl(ch.pw).length)o.lk=1;
+   for(var j=0;j<chs(k).length;j++){var ch=chs(k)[j],o={id:ch.id,name:ch.name,price:ch.price||'',subs:[],sj:(k<100?sjOf(ch):undefined)};if(pwl(ch.pw).length)o.lk=1;
     var m={};
     for(var q=0;q<ch.subs.length;q++){var s=ch.subs[q],r={id:s.id,name:s.name};if(s.price)r.price=s.price;var cont={body:s.body||'',files:s.files||[]};m[s.id]=cont;
      if(pwl(s.pw).length){r.lk=1;r.sp=1;ev['s'+s.id]=await encM(pwl(s.pw),cont,GS,cache,PW)}else if(pwl(ch.pw).length){r.lk=1}else{r.body=cont.body;r.files=cont.files}
@@ -498,7 +503,7 @@ function sub(){return chp().subs.find(function(x){return x.id===V.s})}
 function applyS(){var r=document.documentElement;S.theme==='auto'?r.removeAttribute('data-theme'):r.setAttribute('data-theme',S.theme);r.style.setProperty('--fs',S.fs+'px')}
 async function loadClass(c){try{var r=await fetch('c'+c+'.json?t='+Date.now());var j=await r.json();D[c]=j.cl||[];Object.assign(PENC,j.e||{});dedupe();LOADED[c]=1;await autoOpen(c)}catch(e){D[c]=[];LOADED[c]=2;NT='Could not load this class. Check your internet.'}}
 async function go(x){V=x;NT='';try{lgView()}catch(e){}if(x.v==='cls'&&LAZY&&!OWNER&&!LOADED[x.c]){render();await loadClass(x.c)}render();window.scrollTo(0,0)}
-function addCh(){var n=document.getElementById('in').value.trim();if(!n)return;chs(V.c).push({id:++IDC,name:n,subs:[]});dd();render()}
+function addCh(){var n=document.getElementById('in').value.trim();if(!n)return;chs(V.c).push({id:++IDC,name:n,subs:[],sj:(V.c<100?(SG[V.c]||'B'):undefined)});dd();render()}
 function addSub(){var n=document.getElementById('in').value.trim();if(!n)return;chp().subs.push({id:++IDC,name:n,body:'',files:[]});dd();render()}
 function delCh(id){ask('Delete this chapter?',function(){D[V.c]=chs(V.c).filter(function(x){return x.id!==id});dd();render()})}
 function delSub(id){ask('Delete this topic?',function(){var h=chp();h.subs=h.subs.filter(function(x){return x.id!==id});dd();render()})}
@@ -569,13 +574,17 @@ function render(){
  var bn=(OWNER&&DIRTY)?'<div class="row" style="background:var(--pr);color:#fff"><span>Changes not published yet</span><button class="btn sec" onclick="pub()">Publish</button></div>':'';
  if(V.v==='home'){var tile=function(c){return '<div class="card big" onclick="go({v:\'cls\',c:'+c+'})">Class '+(c>100?c-100:c)+'</div>'},showSS=OWNER||PCL.indexOf(106)>-1||(D[106]&&D[106].length);h='<h2>Choose your class</h2><h3>Science</h3><div class="grid">'+[6,7,8,9,10,11,12].map(tile).join('')+'</div>'+(showSS?'<h3 style="margin-top:22px">Social Science</h3><div class="grid">'+[106,107,108,109,110,111,112].map(tile).join('')+'</div>':'')}
  else if(V.v==='cls'&&LAZY&&!OWNER&&!LOADED[V.c]){h='<p class="mu">Loading, please wait...</p>'}
- else if(V.v==='cls'){var L=chs(V.c);h='<span class="crumb" onclick="go({v:\'home\'})">← Home</span><h2>'+CL(V.c)+' · chapters</h2>'+addBox('New chapter name','addCh')+(L.length?L.map(function(x,i){return '<div class="row"><span onclick="go({v:\'ch\',c:'+V.c+',h:'+x.id+'})">'+(i+1)+'. '+esc(x.name)+(x.lk||x.pw?' 🔒':'')+(x.price?' <small class="mu">'+esc(x.price)+'</small>':'')+'</span>'+(S.edit?'<button class="del" onclick="delCh('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No chapters yet.</p>')}
- else if(V.v==='ch'){var C=chp();h='<span class="crumb" onclick="go({v:\'cls\',c:'+V.c+'})">← '+CL(V.c)+'</span><h2>'+esc(C.name)+'</h2>'+accBox(C)+addBox('New sub-topic','addSub')+(C.subs.length?C.subs.map(function(x,i){return '<div class="row"><span '+(false?'':'onclick="go({v:\'sub\',c:'+V.c+',h:'+V.h+',s:'+x.id+'})"')+'>'+(i+1)+'. '+esc(x.name)+((x.files&&x.files.length)||x.body?' ✓':'')+((x.lk&&!x.open)?' \ud83d\udd12'+(x.price?' <small class="mu">'+esc(x.price)+'</small>':''):'')+'</span>'+(S.edit?'<button class="del" onclick="delSub('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No sub-topics yet.</p>')}
+ else if(V.v==='cls'){var L=chs(V.c),sci=V.c<100,sg=SG[V.c],cnt={B:0,P:0,C:0,O:0};
+  if(sci){L.forEach(function(x){cnt[sjOf(x)]++});if(!sg||(!cnt[sg]&&!S.edit))sg=['B','P','C','O'].filter(function(k){return cnt[k]})[0]||'B';SG[V.c]=sg}
+  var LL=sci?L.filter(function(x){return sjOf(x)===sg}):L,TB=[['B','Biology'],['P','Physics'],['C','Chemistry'],['O','Other']];
+  var tabs=sci?'<div style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px">'+TB.filter(function(t){return t[0]!=='O'||cnt.O||sg==='O'}).map(function(t){return '<button class="btn'+(t[0]===sg?'':' sec')+'" onclick="SG['+V.c+']=\''+t[0]+'\';render()">'+t[1]+' ('+cnt[t[0]]+')</button>'}).join('')+'</div>':'';
+  h='<span class="crumb" onclick="go({v:\'home\'})">← Home</span><h2>'+CL(V.c)+' · chapters</h2>'+tabs+addBox('New chapter name'+(sci?' (added to the selected portion)':''),'addCh')+(LL.length?LL.map(function(x,i){return '<div class="row"><span onclick="go({v:\'ch\',c:'+V.c+',h:'+x.id+'})">'+(i+1)+'. '+esc(sci?pf(x.name):x.name)+(x.lk||x.pw?' 🔒':'')+(x.price?' <small class="mu">'+esc(x.price)+'</small>':'')+'</span>'+(S.edit?'<button class="del" onclick="delCh('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No chapters here yet.</p>')}
+ else if(V.v==='ch'){var C=chp();h='<span class="crumb" onclick="go({v:\'cls\',c:'+V.c+'})">← '+CL(V.c)+'</span><h2>'+esc(C.name)+'</h2>'+portionBox(C)+accBox(C)+addBox('New sub-topic','addSub')+(C.subs.length?C.subs.map(function(x,i){return '<div class="row"><span '+(false?'':'onclick="go({v:\'sub\',c:'+V.c+',h:'+V.h+',s:'+x.id+'})"')+'>'+(i+1)+'. '+esc(x.name)+((x.files&&x.files.length)||x.body?' ✓':'')+((x.lk&&!x.open)?' \ud83d\udd12'+(x.price?' <small class="mu">'+esc(x.price)+'</small>':''):'')+'</span>'+(S.edit?'<button class="del" onclick="delSub('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<p class="mu">No sub-topics yet.</p>')}
  else if(V.v==='sub'){var T=sub();h='<span class="crumb" onclick="go({v:\'ch\',c:'+V.c+',h:'+V.h+'})">← '+esc(chp().name)+'</span><h2>'+esc(T.name)+'</h2>'+subAcc(T)+
   (S.edit?'<h3>Notes</h3><textarea id="bd" placeholder="Write notes here...">'+esc(T.body)+'</textarea><p><button class="btn" onclick="saveBody()">Save notes</button> <span id="ok" class="mu"></span></p><p><button class="btn" onclick="recStart()">🎙 Record</button> <label class="btn sec" style="display:inline-block">🎙 Phone recorder<input type="file" accept="audio/*" capture hidden onchange="up(\'audio\',this)"></label> <label class="btn sec" style="display:inline-block">＋ Audio<input type="file" accept="audio/*" hidden onchange="up(\'audio\',this)"></label> <label class="btn sec" style="display:inline-block">＋ PDF<input type="file" accept="application/pdf" hidden onchange="up(\'pdf\',this)"></label> <label class="btn sec" style="display:inline-block">＋ Video<input type="file" accept="video/*" hidden onchange="up(\'video\',this)"></label></p><div class="add"><input id="lk" placeholder="Paste a video / website link (YouTube, Drive...)"><button class="btn sec" onclick="addLink()">Add link</button></div>':(T.body?'<div style="white-space:pre-wrap;margin-bottom:14px">'+esc(T.body)+'</div>':''))+filesHtml(T)+((!S.edit&&!T.body&&!(T.files&&T.files.length)&&!(T.lk&&!T.open))?'<p class="mu">Nothing added yet.</p>':'')}
  else if(V.v==='set'){h='<h2>Settings</h2><div class="set"><span>Theme</span><select id="th" onchange="S.theme=this.value;sv();applyS()"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="set"><span>Text size</span><input type="range" min="14" max="22" value="'+S.fs+'" style="width:50%" oninput="S.fs=+this.value;sv();applyS()"></div>'+
   (OWNER?'<div class="set"><span>Edit mode</span><input type="checkbox" style="width:auto" '+(S.edit?'checked':'')+' onchange="S.edit=this.checked;sv()"></div><div class="set"><input id="np" type="text" placeholder="New password" style="width:60%"><button class="btn sec" onclick="setPw()">Change</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Buying instructions for students (optional)</span><textarea id="how" style="min-height:90px;margin:6px 0" placeholder="Leave empty to show the default 4 steps">'+esc(D._how||'')+'</textarea><button class="btn sec" onclick="D._how=document.getElementById(\'how\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><span>Payment QR image</span><label class="btn sec">Choose<input type="file" accept="image/*" hidden onchange="qrUp(this)"></label></div><div class="set"><input id="wa" placeholder="Contact: WhatsApp number (919876543210), Telegram link (https://t.me/name) or email" value="'+esc(D._wa||'')+'" style="width:65%"><button class="btn sec" onclick="D._wa=document.getElementById(\'wa\').value.trim();dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><input id="ct" placeholder="Contact / payment info for students" value="'+esc(D._contact||'')+'" style="width:65%"><button class="btn sec" onclick="D._contact=document.getElementById(\'ct\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Share link for students</span><input readonly value="'+LINK+'" onclick="this.select()" style="margin:6px 0"><button class="btn" onclick="copyLink()">Copy link</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Bulk add notes PDFs (Class9-Ch...)</span><input type="file" accept=".pdf,application/pdf" multiple onchange="bulkAdd(this)" style="margin-top:8px"></div><div class="set"><span>Load NCERT chapter list</span><button class="btn sec" onclick="loadAll()">Load</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Prices and passwords for all chapters</span><span class="mu">Price = class number in rupees. A different password is made for every chapter that has none.</span><button class="btn" style="margin-top:8px" onclick="autoAsk()">Make prices and passwords</button><button class="btn sec" style="margin-top:8px" onclick="go({v:\'pws\'})">Show passwords list</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Activity log (Google Sheet link)</span><input id="lgu" placeholder="Paste the Web app URL from Google Apps Script" value="'+esc(D._log||'')+'" style="margin:6px 0"><div><button class="btn sec" onclick="saveLog()">Save</button> <button class="btn sec" onclick="lgTest()">Send test</button></div></div><div class="set"><input id="pcin" placeholder="Password to find its code" style="width:65%"><button class="btn sec" onclick="pcShow()">Code</button></div><div class="set"><span>Test GitHub connection</span><button class="btn sec" onclick="testGh()">Test</button></div><div class="set"><span>Publish for students</span><button class="btn" onclick="pub()">Publish</button></div>':'')+
-  ''+(OWNER?'<div class="set"><span>Log out</span><button class="btn sec" onclick="logout()">Log out</button></div>':'<div class="set"><span>Forget saved chapter passwords</span><button class="btn sec" onclick="try{localStorage.removeItem(\'nch_cp\')}catch(e){}NT=\'Done. Reopen the app.\';render()">Forget</button></div>')+''+(OWNER?'':'<div class="set"><span>Teacher login</span><button class="btn sec" onclick="go({v:\'tl\'})">Login</button></div>')+'<div class="set" style="flex-direction:column;align-items:stretch"><span>Install on your phone</span><span class="mu">Open the browser menu and tap Add to Home screen (or Install app).</span></div><p class="mu">App version 3.7</p>'}
+  ''+(OWNER?'<div class="set"><span>Log out</span><button class="btn sec" onclick="logout()">Log out</button></div>':'<div class="set"><span>Forget saved chapter passwords</span><button class="btn sec" onclick="try{localStorage.removeItem(\'nch_cp\')}catch(e){}NT=\'Done. Reopen the app.\';render()">Forget</button></div>')+''+(OWNER?'':'<div class="set"><span>Teacher login</span><button class="btn sec" onclick="go({v:\'tl\'})">Login</button></div>')+'<div class="set" style="flex-direction:column;align-items:stretch"><span>Install on your phone</span><span class="mu">Open the browser menu and tap Add to Home screen (or Install app).</span></div><p class="mu">App version 3.8</p>'}
  else if(V.v==='pws'&&OWNER){h='<span class="crumb" onclick="go({v:\'set\'})">&larr; Settings</span><h2>Passwords and prices</h2><p class="mu">Only you can see this. Tap the box, then copy. Do not share this screen.</p><textarea readonly style="min-height:460px;font-size:13px" onclick="this.select()">'+esc(pwText())+'</textarea>'}
  else if(V.v==='pwl'&&OWNER){var t='';CLASSES.forEach(function(k){var L=chs(k);if(!L.length)return;t+=(k>100?'Social Science':'Science')+' - Class '+(k>100?k-100:k)+'\n';L.forEach(function(c,i){t+=(i+1)+'. '+c.name+' | '+(c.price||'-')+' | '+(c.pw||'-')+'\n'});t+='\n'});h='<span class="crumb" onclick="go({v:\'set\'})">\u2190 Settings</span><h2>All chapter passwords</h2><p class="mu">Only you can see this. Never show this page to students.</p><textarea id="pwt" readonly style="min-height:420px;font-size:13px">'+esc(t)+'</textarea><p><button class="btn" onclick="cpPw()">Copy all</button> <span id="ok" class="mu"></span></p>'}
  else if(V.v==='tl'){var sp='';try{sp=localStorage.getItem('nch_pw')||''}catch(e){}h='<h2>Teacher login</h2><input id="tpw" type="password" placeholder="Your teacher password" value="'+esc(sp)+'" style="margin-bottom:8px"><input id="ttk" type="password" placeholder="GitHub token (github_pat_...)" value="'+esc(TOK)+'"><p><button class="btn" onclick="tlLogin()">Login</button></p><p id="lm" style="color:var(--dn)"></p><p class="mu">The token is saved only on this phone.</p>'}
