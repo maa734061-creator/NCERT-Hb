@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NCERT Education Hub</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#2f6fed"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{--bg:#f3f5fb;--card:#fff;--tx:#16203a;--mu:#5d6b85;--pr:#2f6fed;--bd:#e2e7f2;--dn:#d92d20;--ok:#12a150;--fs:16px;--hd1:#2f6fed;--hd2:#5b45e6;--chip:#eef2fb;--sh:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.06);--nb:#eaf1ff;--nbd:#cfe0ff;--wb:#fff4e0;--wbd:#ffd8a8;--wt:#7a3e00;--pc:#fff1d6;--pt:#9a5b00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1320;--card:#171e30;--tx:#e9eefb;--mu:#9aa7c2;--pr:#7aa2ff;--bd:#27314b;--chip:#202943;--hd1:#1e3a8a;--hd2:#3b2f9e;--nb:#16264a;--nbd:#2a4380;--wb:#3a2a10;--wbd:#6b4a1a;--wt:#ffd9a0;--pc:#3a2d12;--pt:#ffcf7a;--sh:0 1px 2px rgba(0,0,0,.3)}}
+:root[data-theme="dark"]{--bg:#0e1320;--card:#171e30;--tx:#e9eefb;--mu:#9aa7c2;--pr:#7aa2ff;--bd:#27314b;--chip:#202943;--hd1:#1e3a8a;--hd2:#3b2f9e;--nb:#16264a;--nbd:#2a4380;--wb:#3a2a10;--wbd:#6b4a1a;--wt:#ffd9a0;--pc:#3a2d12;--pt:#ffcf7a;--sh:0 1px 2px rgba(0,0,0,.3)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--tx);font:var(--fs)/1.55 system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari",sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:linear-gradient(135deg,var(--hd1),var(--hd2));color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px;z-index:5;box-shadow:0 2px 12px rgba(20,30,80,.25)}
+header .logo{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:22px}
+header h1{font-size:1.08em;margin:0;line-height:1.2;font-weight:800;letter-spacing:.1px}
+header small{display:block;opacity:.85;font-size:.76em;margin-top:1px}
+main{flex:1;width:100%;max-width:720px;margin:0 auto;padding:16px 16px 28px}
+h2{margin:8px 0 4px;font-size:1.45em;line-height:1.25;font-weight:800}
+h3{margin:0;font-size:1.05em;font-weight:800}
+p{margin:0 0 12px}
+.sub{margin:0 0 14px;font-size:.92em}
+.mu{color:var(--mu)}
+.crumb{display:inline-flex;align-items:center;gap:6px;color:var(--pr);cursor:pointer;margin:2px 0 10px;padding:7px 14px;background:var(--chip);border-radius:999px;font-weight:600;font-size:.92em;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{background:linear-gradient(135deg,var(--hd1),var(--hd2));color:#fff;border-radius:20px;padding:20px 18px;margin:0 0 18px;box-shadow:var(--sh)}
+.hero h2{margin:0 0 6px;color:#fff}
+.hero p{margin:0;opacity:.92;font-size:.95em}
+.subj{--ac:#2f6fed;--acb:#e8f0ff;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:16px;margin-bottom:16px;box-shadow:var(--sh)}
+.subj.soc{--ac:#d9480f;--acb:#fff0e6}
+.subh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.subh small{color:var(--mu);display:block;font-size:.82em}
+.sic{width:44px;height:44px;border-radius:14px;background:var(--acb);display:flex;align-items:center;justify-content:center;font-size:24px}
+.grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{background:var(--acb);border-radius:14px;padding:12px 4px;text-align:center;cursor:pointer;border:1px solid transparent;transition:transform .12s}
+.tile:active{transform:scale(.96)}
+.tile small{display:block;color:var(--mu);font-size:.72em;text-transform:uppercase;letter-spacing:.05em}
+.tile b{display:block;font-size:1.45em;color:var(--ac);line-height:1.2}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;cursor:pointer}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;-webkit-overflow-scrolling:touch}
+.tab{flex:1 0 auto;justify-content:center;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 11px;font-size:.95em;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-weight:600;cursor:pointer}
+.tab em{font-style:normal;font-size:.8em;background:var(--chip);color:var(--mu);border-radius:999px;padding:1px 8px}
+.tab.on{background:var(--pr);border-color:var(--pr);color:#fff}
+.tab.on em{background:rgba(255,255,255,.25);color:#fff}
+.row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;margin-bottom:10px;box-shadow:var(--sh)}
+.row.ch{padding:6px 8px 6px 6px}
+.lnk{flex:1;display:flex;align-items:center;gap:12px;min-width:0;min-height:48px;cursor:pointer}
+.lnk::after{content:"›";color:var(--mu);font-size:1.6em;line-height:1;margin-left:auto;padding-left:4px}
+.num{flex:0 0 34px;height:34px;border-radius:10px;background:var(--chip);color:var(--pr);display:flex;align-items:center;justify-content:center;font-size:.92em}
+.nm{flex:1;min-width:0;font-weight:600;line-height:1.3}
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-style:normal;font-size:.78em;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--chip);color:var(--mu)}
+.chip.price{background:var(--pc);color:var(--pt)}
+.chip.ok{background:#e3f7ec;color:var(--ok)}
+.row audio,.row video{width:100%;margin-top:8px}
+.row a{color:var(--pr);font-weight:600;word-break:break-word}
+input,textarea,select{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit}
+select{width:auto;min-height:40px}
+input[type=checkbox]{width:22px;min-height:22px;height:22px}
+input[type=range]{padding:0;accent-color:var(--pr)}
+textarea{min-height:170px;line-height:1.5}
+input:focus,textarea:focus,select:focus,.btn:focus-visible,.tab:focus-visible,.tool:focus-within{outline:2px solid var(--pr);outline-offset:2px}
+.add{display:flex;gap:8px;margin:0 0 14px}
+.add .btn{flex:0 0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:0 18px;border:0;border-radius:12px;background:var(--pr);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
+.btn:active{transform:scale(.98)}
+.btn.sec{background:var(--card);color:var(--tx);border:1px solid var(--bd);font-weight:600}
+.btn.sm{min-height:36px;padding:0 12px;font-size:.9em;border-radius:10px}
+.btn.block{display:flex;width:100%}
+.del{flex:0 0 auto;width:42px;height:42px;background:none;border:0;border-radius:10px;color:var(--dn);cursor:pointer;font-size:1.1em}
+.del:active{background:var(--chip)}
+.box{display:flex;flex-direction:column;gap:6px;align-items:stretch;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--pr);border-radius:14px;padding:14px;margin:0 0 14px;box-shadow:var(--sh)}
+details.box summary{cursor:pointer;font-weight:700;list-style:none;display:flex;align-items:center;justify-content:space-between}
+details.box summary::after{content:"▾";color:var(--mu)}
+details.box[open] summary{margin-bottom:8px}
+details.box summary::-webkit-details-marker{display:none}
+.note{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--nb);border:1px solid var(--nbd);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:.95em}
+.note.rec{background:#fde8e8;border-color:#f5b5b5;color:#7a1212}
+.note .acts{display:flex;gap:6px}
+.pubbar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--wb);border:1px solid var(--wbd);color:var(--wt);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-weight:600}
+.st{margin:18px 2px 8px;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);font-weight:800}
+.sh{margin:22px 4px 8px;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:var(--mu);font-weight:800}
+.sect{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:2px 14px;box-shadow:var(--sh)}
+.set{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--bd)}
+.sect .set:last-child{border-bottom:0}
+.set>span:first-child{font-weight:600}
+.rowbtn{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
+.rowbtn span{flex:1 1 160px;font-size:.9em}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:78px;padding:8px 4px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:.82em;font-weight:600;text-align:center;cursor:pointer;box-shadow:var(--sh)}
+.tool span{font-size:1.6em;line-height:1}
+.tool:active{transform:scale(.97)}
+.notes{white-space:pre-wrap;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:14px;line-height:1.65}
+.empty{text-align:center;color:var(--mu);padding:30px 10px}
+.empty span{font-size:2em;display:block;margin-bottom:6px}
+nav{position:sticky;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:5;box-shadow:0 -4px 16px rgba(16,24,40,.06)}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;border-radius:12px;padding:6px 4px;color:var(--mu);font:inherit;font-size:.72em;font-weight:600;cursor:pointer;min-height:54px}
+nav button .ic{font-size:1.9em;line-height:1.1}
+nav button.on{color:var(--pr);background:var(--chip)}
+@media (min-width:700px){.grid3{grid-template-columns:repeat(7,1fr)}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .subj{--acb:#1f2a47}:root:not([data-theme="light"]) .subj.soc{--acb:#3a2616}:root:not([data-theme="light"]) .chip.ok{background:#12301f}}
+:root[data-theme="dark"] .subj{--acb:#1f2a47}:root[data-theme="dark"] .subj.soc{--acb:#3a2616}:root[data-theme="dark"] .chip.ok{background:#12301f}
+.seg{display:inline-flex;border:1px solid var(--bd);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:var(--card);color:var(--tx);min-height:38px;min-width:42px;font:inherit;font-weight:700;cursor:pointer}
+.seg button.on{background:var(--pr);color:#fff}
+:root[data-hc="1"]{--tx:#000;--mu:#1f2a44;--bd:#6b7899}
+:root[data-hc="1"][data-theme="dark"]{--tx:#fff;--mu:#d5dcf0;--bd:#8fa0c8}
+@media (prefers-color-scheme:dark){:root[data-hc="1"]:not([data-theme="light"]){--tx:#fff;--mu:#d5dcf0;--bd:#8fa0c8}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="logo">📚</div><div><h1>NCERT Education Hub</h1><small>Science and Social Science · Class 6 to 12</small></div></header>
+<main id="app"></main>
+
+<nav><button id="n-home" onclick="go({v:'home'})"><span class="ic">🏠</span><span>Home</span></button><button id="n-set" onclick="go({v:'set'})"><span class="ic">⚙️</span><span>Settings</span></button><button id="n-ask" onclick="askT()"><span class="ic">💬</span><span>Ask</span></button><button id="n-pri" onclick="go({v:'pri'})"><span class="ic">🔒</span><span>Privacy</span></button></nav>
+<script>
+var CLASSES=[6,7,8,9,10,11,12,106,107,108,109,110,111,112],D={},S={edit:true,theme:'auto',fs:16},V={v:'home'},U=false,OWNER=false,PW='',DIRTY=false,TE=new TextEncoder(),TD=new TextDecoder(),SEED='',IDC=Date.now();
+var DEF=`6|o|The Wonderful World of Science|What is science;Scientific method;Science around us
+6|b|Diversity in the Living World|Grouping living things;Plants and their types;Animals and their types
+6|b|Mindful Eating: A Path to a Healthy Body|Food sources and parts;Nutrients and balanced diet;Healthy eating habits
+6|p|Exploring Magnets|Magnetic and non-magnetic materials;Poles and properties;Uses of magnets
+6|p|Measurement of Length and Motion|Measuring length;Units and SI system;Types of motion
+6|c|Materials Around Us|Properties of materials;Grouping materials;Transparent, opaque, translucent
+6|p|Temperature and its Measurement|Hot and cold;Thermometers;Measuring temperature
+6|c|A Journey through States of Water|States of water;Water cycle;Evaporation and condensation
+6|c|Methods of Separation in Everyday Life|Handpicking and sieving;Filtration and decantation;Evaporation
+6|b|Living Creatures: Exploring their Characteristics|Habitat and adaptation;Characteristics of living things;Responding to surroundings
+6|o|Nature's Treasures|Natural resources;Air, water and soil;Conservation
+6|o|Beyond Earth|Stars and constellations;Solar system;Earth's movements
+7|o|The Ever-Evolving World of Science|Science and its methods;Curiosity and investigation;Science and society
+7|c|Exploring Substances: Acidic, Basic, and Neutral|Acids and bases;Indicators;Neutralisation
+7|p|Electricity: Circuits and Their Components|Electric circuits;Components and symbols;Conductors and insulators
+7|c|The World of Metals and Non-metals|Physical properties;Chemical properties;Uses
+7|c|Changes Around Us: Physical and Chemical|Physical changes;Chemical changes;Rusting and crystallisation
+7|b|Adolescence: A Stage of Growth and Change|Changes at puberty;Hormones;Health and hygiene
+7|p|Heat Transfer in Nature|Conduction;Convection;Radiation
+7|p|Measurement of Time and Motion|Measuring time;Speed;Distance-time graph
+7|b|Life Processes in Animals|Nutrition and digestion;Respiration;Circulation and excretion
+7|b|Life Processes in Plants|Photosynthesis;Transport in plants;Reproduction in plants
+7|p|Light: Shadows and Reflections|Shadows;Reflection;Pinhole camera
+7|o|Earth, Moon, and the Sun|Rotation and revolution;Phases of the Moon;Eclipses
+8|o|Exploring the Investigative World of Science|Scientific investigation;Observation and experiments;Science in daily life
+8|b|The Invisible Living World: Beyond Our Naked Eye|Microscope;Cells;Microorganisms
+8|b|Health: The Ultimate Treasure|Health and hygiene;Diseases;Prevention and vaccines
+8|p|Electricity: Magnetic and Heating Effects|Magnetic effect;Electromagnets;Heating effect
+8|p|Exploring Forces|Types of forces;Friction;Contact and non-contact forces
+8|p|Pressure, Winds, Storms, and Cyclones|Pressure;Atmospheric pressure and winds;Storms and cyclones
+8|c|Particulate Nature of Matter|Particles of matter;States of matter;Diffusion
+8|c|Nature of Matter: Elements, Compounds, and Mixtures|Elements;Compounds;Mixtures
+8|c|The Amazing World of Solutes, Solvents, and Solutions|Solutes and solvents;Solubility;Concentration
+8|p|Light: Mirrors and Lenses|Mirrors;Lenses;Images
+8|o|Keeping Time with the Skies|Sun and time;Moon and calendar;Stars
+8|b|How Nature Works in Harmony|Ecosystem;Food chains;Interdependence
+8|o|Our Home: Earth, a Unique Life Sustaining Planet|Layers of Earth;Atmosphere;Conditions for life
+9|c|Matter in Our Surroundings|States of matter;Change of state;Evaporation
+9|c|Is Matter Around Us Pure?|Mixtures;Solutions and colloids;Separation methods
+9|c|Atoms and Molecules|Laws of chemical combination;Atomic and molecular mass;Mole concept
+9|c|Structure of the Atom|Subatomic particles;Atomic models;Electronic configuration
+9|b|The Fundamental Unit of Life|Cell structure;Organelles;Prokaryotes and eukaryotes
+9|b|Tissues|Plant tissues;Animal tissues;Functions of tissues
+9|p|Motion|Distance and displacement;Speed and velocity;Equations of motion
+9|p|Force and Laws of Motion|Newton's laws;Momentum;Conservation of momentum
+9|p|Gravitation|Universal law of gravitation;Free fall;Buoyancy
+9|p|Work and Energy|Work;Kinetic and potential energy;Power
+9|p|Sound|Production and propagation;Characteristics of sound;Echo and SONAR
+9|b|Improvement in Food Resources|Crop improvement;Animal husbandry;Farming practices
+10|c|Chemical Reactions and Equations|Balancing equations;Types of reactions;Oxidation and reduction
+10|c|Acids, Bases and Salts|Properties of acids and bases;pH scale;Common salts
+10|c|Metals and Non-metals|Physical properties;Reactivity series;Corrosion
+10|c|Carbon and its Compounds|Covalent bonding;Homologous series;Ethanol and ethanoic acid
+10|b|Life Processes|Nutrition;Respiration;Transportation and excretion
+10|b|Control and Coordination|Nervous system;Reflex action;Hormones
+10|b|How do Organisms Reproduce?|Asexual reproduction;Sexual reproduction in plants;Human reproduction
+10|b|Heredity|Mendel's experiments;Inheritance of traits;Sex determination
+10|p|Light – Reflection and Refraction|Mirrors;Refraction;Lenses
+10|p|The Human Eye and the Colourful World|Structure of the eye;Defects of vision;Dispersion and scattering
+10|p|Electricity|Ohm's law;Resistance;Electric power
+10|p|Magnetic Effects of Electric Current|Magnetic field lines;Electromagnet and motor;Electromagnetic induction
+10|b|Our Environment|Ecosystem;Food chains;Ozone depletion and waste
+11|P|Units and Measurements|SI units;Significant figures;Dimensional analysis
+11|P|Motion in a Straight Line|Position and velocity;Acceleration;Kinematic equations
+11|P|Motion in a Plane|Vectors;Projectile motion;Circular motion
+11|P|Laws of Motion|Newton's laws;Friction;Dynamics of circular motion
+11|P|Work, Energy and Power|Work-energy theorem;Potential energy;Collisions
+11|P|System of Particles and Rotational Motion|Centre of mass;Torque;Moment of inertia
+11|P|Gravitation|Kepler's laws;Gravitational potential;Satellites
+11|P|Mechanical Properties of Solids|Stress and strain;Hooke's law;Elastic moduli
+11|P|Mechanical Properties of Fluids|Pressure;Bernoulli's principle;Viscosity and surface tension
+11|P|Thermal Properties of Matter|Temperature and heat;Calorimetry;Heat transfer
+11|P|Thermodynamics|Laws of thermodynamics;Thermodynamic processes;Heat engines
+11|P|Kinetic Theory|Ideal gas;Temperature and kinetic energy;Degrees of freedom
+11|P|Oscillations|Simple harmonic motion;Energy in SHM;Spring and pendulum
+11|P|Waves|Wave motion;Standing waves;Beats and Doppler effect
+11|C|Some Basic Concepts of Chemistry|Mole concept;Stoichiometry;Laws of chemical combination
+11|C|Structure of Atom|Atomic models;Quantum numbers;Electronic configuration
+11|C|Classification of Elements and Periodicity in Properties|Modern periodic table;Periodic trends;Ionisation enthalpy
+11|C|Chemical Bonding and Molecular Structure|Ionic and covalent bonds;VSEPR and hybridisation;Molecular orbital theory
+11|C|Chemical Thermodynamics|Enthalpy;Entropy;Gibbs energy
+11|C|Equilibrium|Chemical equilibrium;Ionic equilibrium;pH and buffers
+11|C|Redox Reactions|Oxidation number;Balancing redox reactions;Electrochemical cells
+11|C|Organic Chemistry – Some Basic Principles and Techniques|Nomenclature;Isomerism;Reaction mechanisms
+11|C|Hydrocarbons|Alkanes;Alkenes and alkynes;Aromatic hydrocarbons
+11|B|The Living World|Characteristics of life;Taxonomy;Taxonomic categories
+11|B|Biological Classification|Five kingdoms;Monera and Protista;Fungi and viruses
+11|B|Plant Kingdom|Algae;Bryophytes and pteridophytes;Gymnosperms and angiosperms
+11|B|Animal Kingdom|Basis of classification;Non-chordates;Chordates
+11|B|Morphology of Flowering Plants|Root, stem and leaf;Inflorescence and flower;Fruit and seed
+11|B|Anatomy of Flowering Plants|Tissues;Tissue systems;Secondary growth
+11|B|Structural Organisation in Animals|Animal tissues;Organ systems;Earthworm, cockroach, frog
+11|B|Cell: The Unit of Life|Cell theory;Cell organelles;Nucleus
+11|B|Biomolecules|Carbohydrates and proteins;Lipids and nucleic acids;Enzymes
+11|B|Cell Cycle and Cell Division|Mitosis;Meiosis;Significance
+11|B|Photosynthesis in Higher Plants|Light reactions;Calvin cycle;Factors affecting photosynthesis
+11|B|Respiration in Plants|Glycolysis;Krebs cycle;Electron transport
+11|B|Plant Growth and Development|Growth phases;Plant hormones;Photoperiodism
+11|B|Breathing and Exchange of Gases|Respiratory organs;Mechanism of breathing;Transport of gases
+11|B|Body Fluids and Circulation|Blood and lymph;Human heart;Cardiac cycle
+11|B|Excretory Products and their Elimination|Excretory system;Urine formation;Disorders
+11|B|Locomotion and Movement|Muscles;Skeletal system;Joints
+11|B|Neural Control and Coordination|Neuron;Reflex and CNS;Sense organs
+11|B|Chemical Coordination and Integration|Endocrine glands;Hormones;Mechanism of action
+12|P|Electric Charges and Fields|Coulomb's law;Electric field;Gauss's law
+12|P|Electrostatic Potential and Capacitance|Electric potential;Capacitors;Dielectrics
+12|P|Current Electricity|Ohm's law;Kirchhoff's laws;Wheatstone bridge
+12|P|Moving Charges and Magnetism|Lorentz force;Biot-Savart law;Ampere's law
+12|P|Magnetism and Matter|Bar magnet;Earth's magnetism;Magnetic materials
+12|P|Electromagnetic Induction|Faraday's law;Lenz's law;Inductance
+12|P|Alternating Current|AC circuits;Resonance;Transformers
+12|P|Electromagnetic Waves|Displacement current;EM spectrum;Properties
+12|P|Ray Optics and Optical Instruments|Reflection and refraction;Lenses;Microscope and telescope
+12|P|Wave Optics|Huygens principle;Interference;Diffraction and polarisation
+12|P|Dual Nature of Radiation and Matter|Photoelectric effect;Einstein's equation;de Broglie waves
+12|P|Atoms|Atomic models;Bohr model;Hydrogen spectrum
+12|P|Nuclei|Nuclear size and mass;Radioactivity;Fission and fusion
+12|P|Semiconductor Electronics|Energy bands;p-n junction diode;Logic gates
+12|C|Solutions|Concentration terms;Raoult's law;Colligative properties
+12|C|Electrochemistry|Electrochemical cells;Nernst equation;Conductance
+12|C|Chemical Kinetics|Rate of reaction;Order and molecularity;Arrhenius equation
+12|C|The d- and f-Block Elements|Transition elements;Properties;Lanthanoids and actinoids
+12|C|Coordination Compounds|Werner's theory;Nomenclature;Bonding and isomerism
+12|C|Haloalkanes and Haloarenes|Nomenclature;Substitution reactions;Uses and environmental effects
+12|C|Alcohols, Phenols and Ethers|Preparation;Properties;Reactions
+12|C|Aldehydes, Ketones and Carboxylic Acids|Nomenclature;Preparation;Reactions
+12|C|Amines|Classification;Preparation;Diazonium salts
+12|C|Biomolecules|Carbohydrates;Proteins;Vitamins and nucleic acids
+12|B|Sexual Reproduction in Flowering Plants|Flower structure;Pollination;Double fertilisation
+12|B|Human Reproduction|Reproductive systems;Gametogenesis;Fertilisation and pregnancy
+12|B|Reproductive Health|Contraception;STIs;Infertility
+12|B|Principles of Inheritance and Variation|Mendel's laws;Chromosomal theory;Genetic disorders
+12|B|Molecular Basis of Inheritance|DNA structure;Replication and transcription;Translation
+12|B|Evolution|Origin of life;Evidence of evolution;Hardy-Weinberg principle
+12|B|Human Health and Disease|Pathogens;Immunity;Cancer and drugs
+12|B|Microbes in Human Welfare|Household products;Sewage treatment;Biofuels and biofertilisers
+12|B|Biotechnology: Principles and Processes|Recombinant DNA;Tools of biotechnology;Bioreactors
+12|B|Biotechnology and its Applications|Agriculture;Medicine;Ethical issues
+12|B|Organisms and Populations|Adaptations;Population attributes;Interactions
+12|B|Ecosystem|Structure;Energy flow;Productivity
+12|B|Biodiversity and Conservation|Patterns of biodiversity;Loss of biodiversity;Conservation
+106|S|Locating Places on the Earth|Latitudes and longitudes;Using maps and globes;Finding locations
+106|S|Oceans and Continents|Continents of the world;Oceans of the world;Where we live
+106|S|Landforms and Life|Mountains, plateaus and plains;How landforms shape life;Land use and settlements
+106|S|Timeline and Sources of History|Reading timelines;Sources of history;Historians and evidence
+106|S|India, That Is Bharat|Names of our country;Geography of ancient India;Bharat's identity
+106|S|The Beginnings of Indian Civilisation|Early settlements;Harappan cities;Daily life and trade
+106|S|India's Cultural Roots|Ancient traditions;Languages and arts;Knowledge traditions
+106|S|Unity in Diversity, or 'Many in the One'|Diversity in India;Festivals and food;Living together
+106|S|Family and Community|Family and its types;Community life;Roles and responsibilities
+106|S|Grassroots Democracy - Part 1: Governance|What is governance;Role of government;Participation of citizens
+106|S|Grassroots Democracy - Part 2: Local Government in Rural Areas|Gram Panchayat;Gram Sabha;Panchayati Raj levels
+106|S|Grassroots Democracy - Part 3: Local Government in Urban Areas|Municipalities;Urban services;Citizens and the city
+106|S|The Value of Work|Types of work;Dignity of labour;Work and community
+106|S|Economic Activities Around Us|Primary, secondary and tertiary;Farming and industry;Markets and trade
+107|S|Geographical Diversity of India|Physical regions;Rivers and plains;Regions and people
+107|S|Understanding the Weather|Elements of weather;Measuring weather;Weather and daily life
+107|S|Climates of India|Monsoon;Seasons of India;Regional climates
+107|S|New Beginnings: Cities and States|Early cities;Janapadas and mahajanapadas;Cities and trade
+107|S|The Rise of Empires|Magadha and the Mauryas;Ashoka;Administration
+107|S|The Age of Reorganisation|Post-Mauryan kingdoms;Trade and exchange;New states
+107|S|The Gupta Era: An Age of Tireless Creativity|Gupta rulers;Science and art;Travellers' accounts
+107|S|How the Land Becomes Sacred|Sacred places;Pilgrimage;Land and belief
+107|S|From the Rulers to the Ruled: Types of Governments|Forms of government;Monarchy and democracy;Rule and people
+107|S|The Constitution of India - An Introduction|Making of the Constitution;Preamble;Fundamental ideas
+107|S|From Barter to Money|Barter system;Origin of money;Modern money
+107|S|Understanding Markets|Types of markets;Demand and supply;Buyers and sellers
+107|S|The Story of Indian Farming|Early agriculture;Crops and regions;Modern farming
+107|S|India and Her Neighbours|Neighbouring countries;Shared history;Relations today
+107|S|Empires and Kingdoms: 6th to 10th Centuries|Major dynasties;Society and culture;Administration
+107|S|Turning Tides: 11th and 12th Centuries|New powers;Invasions and responses;Society in change
+107|S|India, a Home to Many|Communities;Cultures and religions;Unity
+107|S|The State, the Government, and You|Role of the state;Levels of government;Role of citizens
+107|S|Infrastructure - Engine of India's Development|Roads and railways;Power and water;Development
+107|S|Banks and the Magic of Finance|Role of banks;Savings and loans;Interest and credit
+108|S|Natural Resources and Their Use|Types of resources;Land, water and soil;Conservation
+108|S|Reshaping India's Political Map|Rise of British power;Princely states;Integration
+108|S|The Rise of the Marathas|Shivaji;Maratha administration;Expansion
+108|S|The Colonial Era in India|East India Company;Colonial economy;Impact on society
+108|S|Universal Franchise and India's Electoral System|Right to vote;Elections;Election Commission
+108|S|The Parliamentary System: Legislature and Executive|Parliament;Executive;How laws are made
+108|S|Factors of Production|Land and labour;Capital and enterprise;Production process
+108|S|World Geography: Some Glimpses|Continents and regions;Landscapes;Climates and people
+108|S|India's Long Road to Independence|Early resistance;Freedom movement;Independence
+108|S|A Journey Through Indian Architecture|Ancient architecture;Medieval buildings;Colonial and modern
+108|S|The Role of the Judiciary in Our Society|Courts;Independence of judiciary;Access to justice
+108|S|Citizenship: Rights and Duties|Citizenship;Fundamental rights;Fundamental duties
+108|S|Dynamics of Population|Population growth;Distribution;Population change
+108|S|India's Urban Landscape|Cities of India;Urbanisation;Urban challenges
+108|S|Cultural Currents: 13th to 17th Centuries|Bhakti and Sufi traditions;Art and literature;Regional cultures
+109|S|Understanding Social Science|What is social science;History, geography, civics and economics;How they connect
+109|S|Shaping of the Earth's Surface|Earth's interior;Plate tectonics;Landforms and disasters
+109|S|Atmosphere and Climate|Layers of the atmosphere;Weather and climate;Climate zones
+109|S|Early Humans and Beginning of Civilization|Early humans;River valley civilisations;Harappan civilisation
+109|S|State and Society up to 1000 CE|Early states;Society and economy;Culture and learning
+109|S|Understanding Democracy|What is democracy;Democracy in India;Why democracy
+109|S|Elections|Why elections;FPTP and proportional representation;The Emergency
+109|S|Building Blocks in Economics: The Problem of Choice|Scarcity;Opportunity cost;Central problems of an economy
+109|S|The Price Puzzle: What Drives the Market|Demand;Supply;Market equilibrium
+110|H|The Rise of Nationalism in Europe|French Revolution and the nation;Unification of Germany and Italy;Nationalism and imperialism
+110|H|Nationalism in India|Non-Cooperation Movement;Civil Disobedience Movement;Sense of collective belonging
+110|H|The Making of a Global World|Pre-modern trade;Interwar economy;Post-war order
+110|H|The Age of Industrialisation|Before the factory;Hand labour and steam power;Industrialisation in the colonies
+110|H|Print Culture and the Modern World|First printed books;Print revolution;Print in India
+110|G|Resources and Development|Types of resources;Resource planning;Land and soil
+110|G|Forest and Wildlife Resources|Flora and fauna;Conservation;Community participation
+110|G|Water Resources|Water scarcity;Dams;Rainwater harvesting
+110|G|Agriculture|Types of farming;Major crops;Technology and reforms
+110|G|Minerals and Energy Resources|Minerals;Conventional energy;Non-conventional energy
+110|G|Manufacturing Industries|Importance of industry;Types of industries;Industrial pollution
+110|G|Lifelines of National Economy|Roads and railways;Ports and airways;Trade and tourism
+110|O|Power Sharing|Belgium and Sri Lanka;Forms of power sharing;Why power sharing
+110|O|Federalism|What is federalism;Federalism in India;Decentralisation
+110|O|Gender, Religion and Caste|Gender and politics;Religion and politics;Caste and politics
+110|O|Political Parties|Why parties;National and state parties;Challenges
+110|O|Outcomes of Democracy|Accountability;Economic growth;Dignity and freedom
+110|E|Development|Development goals;Income and other criteria;Sustainability
+110|E|Sectors of the Indian Economy|Primary, secondary and tertiary;Employment;Organised and unorganised
+110|E|Money and Credit|Modern forms of money;Banks;Credit and self-help groups
+110|E|Globalisation and the Indian Economy|Multinational companies;Liberalisation;Impact
+110|E|Consumer Rights|Consumer awareness;Consumer rights;Consumer movement
+111|H|From the Beginning of Time|Early humans;Hunting and gathering;Evolution of tools
+111|H|Writing and City Life|Mesopotamia;Cities and writing;Trade and society
+111|H|An Empire Across Three Continents|Roman Empire;Society and economy;Fall of Rome
+111|H|Central Islamic Lands|Rise of Islam;Caliphates;Culture and learning
+111|H|Nomadic Empires|The Mongols;Chinggis Khan;Society and trade
+111|H|The Three Orders|Feudalism;Church and monarchy;Peasant life
+111|H|Changing Cultural Traditions|Renaissance;Humanism;Scientific revolution
+111|H|Confrontation of Cultures|Voyages of exploration;Aztecs and Mayas;Colonisation
+111|H|The Industrial Revolution|Causes in Britain;Factories and cities;Social impact
+111|H|Displacing Indigenous Peoples|North America;Australia;Settler colonies
+111|H|Paths to Modernisation|Japan;China;Westernisation
+111|G|Geography as a Discipline|Nature of geography;Branches;Approaches
+111|G|The Origin and Evolution of the Earth|Origin theories;Big Bang;Evolution of the layers
+111|G|Interior of the Earth|Sources of information;Layers of the Earth;Earthquakes and volcanoes
+111|G|Distribution of Oceans and Continents|Continental drift;Sea-floor spreading;Plate tectonics
+111|G|Minerals and Rocks|Minerals;Types of rocks;Rock cycle
+111|G|Geomorphic Processes|Endogenic processes;Exogenic processes;Weathering and erosion
+111|G|Landforms and their Evolution|Running water;Glaciers and wind;Waves and groundwater
+111|G|Composition and Structure of Atmosphere|Composition;Layers;Importance
+111|G|Solar Radiation, Heat Balance and Temperature|Insolation;Heat budget;Temperature distribution
+111|G|Atmospheric Circulation and Weather Systems|Pressure belts;Winds;Cyclones
+111|G|Water in the Atmosphere|Humidity;Clouds;Precipitation
+111|G|World Climate and Climate Change|Climate classification;Climate zones;Global warming
+111|G|Water (Oceans)|Hydrological cycle;Ocean relief;Temperature and salinity
+111|G|Movements of Ocean Water|Waves;Tides;Ocean currents
+111|G|Life on the Earth|Biosphere;Ecosystems;Biomes
+111|G|Biodiversity and Conservation|Biodiversity;Threats;Conservation
+111|g|India: Location|Location and extent;Neighbours;Time zones
+111|g|Structure and Physiography|Geological structure;Physiographic divisions;Himalayas and plains
+111|g|Drainage System|Himalayan rivers;Peninsular rivers;Lakes
+111|g|Climate|Monsoon mechanism;Seasons;Rainfall
+111|g|Natural Vegetation|Forest types;Distribution;Conservation
+111|g|Soils|Soil types;Soil formation;Soil conservation
+111|g|Natural Hazards and Disasters|Earthquakes and floods;Cyclones and droughts;Disaster management
+111|O|Constitution: Why and How?|Need for a constitution;Making of the Constitution;Features
+111|O|Rights in the Indian Constitution|Fundamental rights;Equality and freedom;Directive principles
+111|O|Election and Representation|Election system;First past the post;Reservation
+111|O|Executive|President and Prime Minister;Council of Ministers;Bureaucracy
+111|O|Legislature|Parliament;Lawmaking;Parliamentary committees
+111|O|Judiciary|Supreme Court;Judicial review;Public interest litigation
+111|O|Federalism|Federal features;Centre-state relations;Demands for autonomy
+111|O|Local Governments|Panchayati Raj;Urban local bodies;73rd and 74th Amendments
+111|O|Constitution as a Living Document|Amendments;Basic structure;Interpretation
+111|O|The Philosophy of the Constitution|Liberty and equality;Social justice;Secularism and democracy
+111|O|Political Theory: An Introduction|What is politics;Why theory;Concepts
+111|O|Freedom|Meaning of freedom;Negative and positive liberty;Harm principle
+111|O|Equality|Why equality;Types of equality;Feminism and Marxism
+111|O|Social Justice|Meaning of justice;Distribution;Rawls
+111|O|Rights|What are rights;Types of rights;Rights and duties
+111|O|Citizenship|Full membership;Equal rights;Global citizenship
+111|O|Nationalism|Nation and nationalism;Self-determination;Pros and cons
+111|O|Secularism|Meaning;Indian secularism;Criticisms
+111|O|Peace|Meaning of peace;Violence;Paths to peace
+111|O|Development|Meaning;Critiques;Alternative paths
+111|E|Indian Economy on the Eve of Independence|Colonial economy;Agriculture and industry;Poverty and demography
+111|E|Indian Economy 1950-1990|Planning;Agriculture and land reforms;Industrial policy
+111|E|Liberalisation, Privatisation and Globalisation: An Appraisal|1991 crisis;LPG reforms;Appraisal
+111|E|Poverty|Poverty lines;Causes;Anti-poverty programmes
+111|E|Human Capital Formation in India|Human capital;Education;Health
+111|E|Rural Development|Credit;Marketing;Diversification
+111|E|Employment: Growth, Informalisation and Other Issues|Workforce;Informal sector;Unemployment
+111|E|Infrastructure|Energy;Health;Role of infrastructure
+111|E|Environment and Sustainable Development|Environment;Pollution;Sustainable development
+111|E|Comparative Development Experiences of India and its Neighbours|India, Pakistan and China;Development strategies;Comparisons
+111|E|Statistics: Introduction|Meaning of statistics;Uses;Limitations
+111|E|Collection of Data|Sources;Census and sampling;Methods
+111|E|Organisation of Data|Raw data;Frequency distribution;Classification
+111|E|Presentation of Data|Tables;Diagrams;Graphs
+111|E|Measures of Central Tendency|Mean;Median;Mode
+111|E|Measures of Dispersion|Range;Quartile deviation;Standard deviation
+111|E|Correlation|Meaning;Scatter diagram;Karl Pearson
+111|E|Index Numbers|Meaning;Construction;Uses
+112|H|Bricks, Beads and Bones|Harappan cities;Craft and trade;Decline
+112|H|Kings, Farmers and Towns|Early states;Agriculture;Towns and trade
+112|H|Kinship, Caste and Class|Kinship;Caste;Mahabharata
+112|H|Thinkers, Beliefs and Buildings|Jainism and Buddhism;Stupas;Early Hinduism
+112|H|Through the Eyes of Travellers|Al-Biruni;Ibn Battuta;Bernier
+112|H|Bhakti-Sufi Traditions|Bhakti saints;Sufi orders;Society and faith
+112|H|An Imperial Capital: Vijayanagara|Hampi;Kings and temples;Administration
+112|H|Peasants, Zamindars and the State|Agrarian society;Land revenue;Zamindars
+112|H|Kings and Chronicles|Mughal empire;Akbar's court;Chronicles
+112|H|Colonialism and the Countryside|Bengal and zamindars;Santhals and Deccan riots;Revenue systems
+112|H|Rebels and the Raj|Revolt of 1857;Causes and spread;Aftermath
+112|H|Colonial Cities|Presidency cities;Town planning;Urban society
+112|H|Mahatma Gandhi and the Nationalist Movement|Gandhi's methods;Non-cooperation and Dandi;Quit India
+112|H|Understanding Partition|Causes;Violence and displacement;Memory
+112|H|Framing the Constitution|Constituent Assembly;Debates;Features
+112|G|Human Geography: Nature and Scope|Meaning;Branches;Human-nature relation
+112|G|The World Population|Distribution and density;Growth;Demographic transition
+112|G|Population Composition|Age and sex;Rural and urban;Literacy
+112|G|Human Development|Concept;Indicators;International comparisons
+112|G|Primary Activities|Hunting and gathering;Agriculture;Mining
+112|G|Secondary Activities|Manufacturing;Types of industry;Industrial regions
+112|G|Tertiary and Quaternary Activities|Trade;Services;Quaternary and quinary
+112|G|Transport and Communication|Roads and railways;Water and air;Communication
+112|G|International Trade|Basis of trade;Balance of trade;Trade organisations
+112|G|Human Settlements|Types of settlements;Rural and urban;Urbanisation
+112|g|Population: Distribution, Density, Growth and Composition|Distribution;Growth;Composition
+112|g|Migration: Types, Causes and Consequences|Types;Causes;Consequences
+112|g|Human Development|Indicators;Regional patterns;Issues
+112|g|Human Settlements|Settlement types;Urban patterns;Problems
+112|g|Land Resources and Agriculture|Land use;Types of agriculture;Problems
+112|g|Water Resources|Availability;Irrigation;Water conservation
+112|g|Mineral and Energy Resources|Minerals;Energy sources;Conservation
+112|g|Manufacturing Industries|Types of industry;Location factors;Industrial regions
+112|g|Planning and Sustainable Development in Indian Context|Planning;Sustainable development;Case studies
+112|g|Transport and Communication|Roads and railways;Pipelines;Communication
+112|g|International Trade|India's trade;Ports;Tourism
+112|g|Geographical Perspective on Selected Issues and Problems|Environmental pollution;Urbanisation issues;Land degradation
+112|O|The Cold War Era|Superpowers;Cold War arenas;Non-Aligned Movement
+112|O|The End of Bipolarity|Soviet collapse;Shock therapy;India and Russia
+112|O|US Hegemony in World Politics|Gulf wars;Hegemony;Constraints
+112|O|Alternative Centres of Power|European Union;ASEAN;Rise of China
+112|O|Contemporary South Asia|The region;Democracy;India and Pakistan
+112|O|International Organisations|United Nations;Reform;India and the UN
+112|O|Security in the Contemporary World|Traditional security;Non-traditional security;Cooperation
+112|O|Environment and Natural Resources|Global environment;Resources;Indigenous voices
+112|O|Globalisation|Meaning;Impacts;Resistance
+112|O|Challenges of Nation-Building|Partition;Princely states;Reorganisation of states
+112|O|Era of One-Party Dominance|First elections;Congress dominance;Opposition
+112|O|Politics of Planned Development|Planning;Five-Year Plans;Debates
+112|O|India's External Relations|Non-alignment;Wars;Nuclear policy
+112|O|Challenges to and Restoration of the Congress System|After Nehru;1967 elections;Split
+112|O|The Crisis of Democratic Order|JP movement;Emergency;Post-Emergency
+112|O|Rise of Popular Movements|Chipko;Farmers' movements;Women's movements
+112|O|Regional Aspirations|Punjab and Kashmir;North-East;Autonomy
+112|O|Recent Developments in Indian Politics|Coalitions;Mandal;Ayodhya
+112|E|Macroeconomics: Introduction|Macroeconomics;Circular flow;Basic concepts
+112|E|National Income Accounting|GDP;Methods;Real and nominal
+112|E|Money and Banking|Functions of money;Commercial banks;Central bank
+112|E|Determination of Income and Employment|Aggregate demand;Multiplier;Equilibrium
+112|E|Government Budget and the Economy|Budget;Deficits;Fiscal policy
+112|E|Open Economy Macroeconomics|Balance of payments;Exchange rates;Foreign exchange market
+112|E|Microeconomics: Introduction|Microeconomics;Central problems;Types of economy
+112|E|Theory of Consumer Behaviour|Utility;Indifference curve;Demand
+112|E|Production and Costs|Production function;Costs;Revenue
+112|E|The Theory of the Firm under Perfect Competition|Perfect competition;Profit maximisation;Supply
+112|E|Market Equilibrium|Equilibrium;Price changes;Shifts
+112|E|Non-Competitive Markets|Monopoly;Monopolistic competition;Oligopoly`;
+var PFX={S:'',b:'',p:'',c:'',o:'',P:'Physics · ',C:'Chemistry · ',B:'Biology · ',H:'History · ',G:'Geography · ',g:'Geography (India) · ',O:'Political Science · ',E:'Economics · '};
+function CL(c){return c>100?'Class '+(c-100)+' · Social Science':'Class '+c}
+var PUB=null,PENC={},TOK='',LAZY=false,LOADED={},PCL=[6,7,8,9,10,11,12,106,107,108,109,110,111,112];try{TOK=localStorage.getItem('nch_tk')||''}catch(e){}
+var LD={};function dedupe(){var rm=0;CLASSES.forEach(function(c){var L=D[c];if(!L)return;var best={},ord=[];function sc(x){var n=(x.price||x.pw||x.lk)?1:0;(x.subs||[]).forEach(function(s){n+=(s.body?1:0)+((s.files||[]).length)});return n}L.forEach(function(x){var b=best[x.name];if(!b){best[x.name]=x;ord.push(x.name)}else if(sc(x)>sc(b))best[x.name]=x});D[c]=ord.map(function(n){return best[n]});rm+=L.length-D[c].length});return rm}
+var SJ={b:'B',p:'P',c:'C',o:'O',P:'P',C:'C',B:'B'},SJMAP=null,SG={};
+function sjOf(ch){if(ch.sj)return ch.sj;var n=ch.name||'';if(n.indexOf('Physics · ')===0)return 'P';if(n.indexOf('Chemistry · ')===0)return 'C';if(n.indexOf('Biology · ')===0)return 'B';if(!SJMAP){SJMAP={};DEF.split('\n').forEach(function(l){var p=l.split('|');if(SJ[p[1]])SJMAP[p[2]]=SJ[p[1]]})}return SJMAP[n]||'O'}
+function pf(n){return n.replace(/^(Physics|Chemistry|Biology) · /,'')}
+function portionBox(C){if(!(OWNER&&S.edit&&V.c<100))return '';var s=sjOf(C);return '<div class="set"><span>Portion</span><select onchange="setSj(this.value)">'+[['B','Biology'],['P','Physics'],['C','Chemistry'],['O','Other']].map(function(t){return '<option value="'+t[0]+'"'+(t[0]===s?' selected':'')+'>'+t[1]+'</option>'}).join('')+'</select></div>'}
+function setSj(v){chp().sj=v;dd();NT='Moved. Tap Publish to show students.';render()}
+function loadDef(){LD={k:{}};DEF.split('\n').forEach(function(l){var p=l.split('|'),c=+p[0];if(LD.k[c]===undefined)LD.k[c]=!!(D[c]&&D[c].length);if(LD.k[c])return;(D[c]=D[c]||[]).push({id:++IDC,name:PFX[p[1]]+p[2],sj:SJ[p[1]],subs:p[3].split(';').map(function(n){return{id:++IDC,name:n,body:'',files:[]}})})});}
+var PEND=null,PMSG='',NT='';function ask(m,f){PEND=f;PMSG=m;render()}function yes(){var f=PEND;PEND=null;f()}function no(){PEND=null;render()}
+function loadAll(){loadDef();dedupe();dd();NT='Chapters loaded. Check each class, then tap Publish.';render()}
+function hasData(){return CLASSES.some(function(c){return D[c]&&D[c].length})}
+function b2s(u){var s='';for(var i=0;i<u.length;i+=8192)s+=String.fromCharCode.apply(null,u.subarray(i,i+8192));return btoa(s)}
+function s2b(s){var t=atob(s),u=new Uint8Array(t.length);for(var i=0;i<t.length;i++)u[i]=t.charCodeAt(i);return u}
+async function dk(pw,salt){var m=await crypto.subtle.importKey('raw',TE.encode(pw),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:150000,hash:'SHA-256'},m,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function encr(pw,obj){var salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),k=await dk(pw,salt),ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv:iv},k,TE.encode(JSON.stringify(obj)))),o=new Uint8Array(28+ct.length);o.set(salt);o.set(iv,16);o.set(ct,28);return b2s(o)}
+async function decr(pw,s){var o=s2b(s),k=await dk(pw,o.slice(0,16)),p=await crypto.subtle.decrypt({name:'AES-GCM',iv:o.slice(16,28)},k,o.slice(28));return JSON.parse(TD.decode(p))}
+async function dbits(pw,salt){var m=await crypto.subtle.importKey('raw',TE.encode(pw),'PBKDF2',false,['deriveBits']);return new Uint8Array(await crypto.subtle.deriveBits({name:'PBKDF2',salt:salt,iterations:150000,hash:'SHA-256'},m,256))}
+async function mtag(bits){var x=new Uint8Array(33);x.set(bits);x[32]=1;var h=new Uint8Array(await crypto.subtle.digest('SHA-256',x));return Array.from(h.slice(0,4)).map(function(b){return ('0'+b.toString(16)).slice(-2)}).join('')}
+async function aes(raw,mode,iv,data){var k=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,[mode]);return new Uint8Array(await crypto.subtle[mode]({name:'AES-GCM',iv:iv},k,data))}
+function pwl(p){return String(p||'').split(/[,\n]+/).map(function(x){return x.trim()}).filter(Boolean)}
+async function sh(p){return new Uint8Array(await crypto.subtle.digest('SHA-256',TE.encode(p.join('\u0001'))))}
+async function encM(pws,obj,salt,cache,seed){var js=JSON.stringify(obj),K=await sh([seed,'K',js,pws.join('\u0002')]),iv=(await sh([seed,'I',js])).slice(0,12),ct=await aes(K,'encrypt',iv,TE.encode(js)),w=[];
+ for(var i=0;i<pws.length;i++){var bits=cache[pws[i]]||(cache[pws[i]]=await dbits(pws[i],salt)),wi=(await sh([seed,'W',pws[i],b2s(K)])).slice(0,12),wk=await aes(bits,'encrypt',wi,K);w.push({t:await mtag(bits),i:b2s(wi),k:b2s(wk)})}
+ return{s:b2s(salt),i:b2s(iv),c:b2s(ct),w:w}}
+async function decM(pw,E){var bits=await dbits(pw,s2b(E.s)),t=await mtag(bits),w=E.w.find(function(x){return x.t===t});if(!w)throw new Error('bad');var K=await aes(bits,'decrypt',s2b(w.i),s2b(w.k));return JSON.parse(TD.decode(await aes(K,'decrypt',s2b(E.i),s2b(E.c))))}
+function dec2(pw,E){return typeof E==='string'?decr(pw,E):decM(pw,E)}
+function msg(t){var e=document.getElementById('lm');if(e)e.textContent=t}
+async function unlock(pw,first){
+ try{
+  if(SEED){D=await decr(pw,SEED)}else if(first){if(pw.length<4){msg('Use at least 4 characters');return}D={}}else return;
+  PW=pw;U=true;try{localStorage.setItem('nch_pw',pw)}catch(e){}
+  S.edit=OWNER;
+  if(OWNER){try{var d=localStorage.getItem('nch_draft');if(d){D=JSON.parse(d);DIRTY=true}}catch(e){}
+   if(dedupe())dd();if(!hasData()||!D._ss){D._ss=1;loadDef();dd()}}
+  render();
+ }catch(e){msg('Wrong password')}
+}
+function logout(){try{localStorage.removeItem('nch_pw')}catch(e){}OWNER=false;PW='';S.edit=false;D=LAZY?{}:(PUB&&PUB.cl?PUB.cl:{});LOADED={};U=!!PUB;V={v:'home'};render()}
+async function gsha(bytes){var pre=TE.encode('blob '+bytes.length+'\0'),all=new Uint8Array(pre.length+bytes.length);all.set(pre);all.set(bytes,pre.length);return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-1',all))).map(function(b){return ('0'+b.toString(16)).slice(-2)}).join('')}
+async function gh(path,obj){var base='https://api.github.com/repos/maa734061-creator/NCERT-Hb/contents/'+path,h={Authorization:'Bearer '+TOK,Accept:'application/vnd.github+json'},bytes=TE.encode(JSON.stringify(obj)),mine=await gsha(bytes),content=b2s(bytes);
+ for(var t=0;t<2;t++){var sha;try{var g=await fetch(base+'?ref=main&t='+Date.now(),{headers:h});if(g.ok)sha=(await g.json()).sha}catch(e){}
+  if(sha&&sha===mine)return;
+  var ac=new AbortController(),tm=setTimeout(function(){ac.abort()},240000),res;try{res=await fetch(base,{method:'PUT',signal:ac.signal,headers:h,body:JSON.stringify({message:'Update from teacher app',content:content,sha:sha,branch:'main'})})}catch(e){clearTimeout(tm);throw new Error('Upload took too long or the internet dropped. Use Wi-Fi and tap Publish again.')}clearTimeout(tm);
+  if(res.ok)return;if((res.status!==409&&res.status!==422)||t===1)throw new Error(res.status+' '+(await res.text()).slice(0,100))}}
+function rpw(){var a='abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789',r='',b=crypto.getRandomValues(new Uint8Array(8));for(var i=0;i<8;i++)r+=a[b[i]%a.length];return r}
+function genAll(){var n=0,t=0;CLASSES.forEach(function(c){chs(c).forEach(function(ch){if(!pwl(ch.pw).length){ch.pw=rpw();n++}ch.price='\u20b9'+(c>100?c-100:c);t++})});dd();NT='Done. '+t+' chapters priced (class number in rupees). '+n+' new passwords made. Open the passwords list, then tap Publish.';render()}
+function pwText(){var o=[];CLASSES.forEach(function(c){var L=chs(c);if(!L.length)return;o.push('== '+CL(c)+' ==');L.forEach(function(ch,i){var t=(i+1)+'. '+ch.name+' | '+(ch.price||'-')+' | '+(ch.pw||'-');ch.subs.forEach(function(s){if(s.pw)t+='\n      topic: '+s.name+' | '+(s.price||'-')+' | '+s.pw});o.push(t)});o.push('')});return o.join('\n')}
+function rpw(){var a='abcdefghjkmnpqrstuvwxyz23456789',s='',r=crypto.getRandomValues(new Uint8Array(8));for(var i=0;i<8;i++)s+=a[r[i]%a.length];return s}
+function autoAll(){var n=0;CLASSES.forEach(function(k){chs(k).forEach(function(ch){ch.price='\u20b9'+(k>100?k-100:k);if(!pwl(ch.pw).length){ch.pw=rpw();n++}})});dd();NT='Done. Every chapter has a price, and '+n+' new passwords were made. Tap Show passwords list (below), then Publish.';render()}
+function autoAsk(){ask('Set the price (class number in rupees) and a password for EVERY chapter? Chapters that already have a password keep it.',autoAll)}
+function cpPw(){var e=document.getElementById('pwt'),o=document.getElementById('ok');e.select();try{navigator.clipboard.writeText(e.value).then(function(){o.textContent='Copied'},function(){document.execCommand('copy');o.textContent='Copied'})}catch(x){try{document.execCommand('copy');o.textContent='Copied'}catch(y){o.textContent='Press and hold the text, then copy'}}}
+async function testGh(){if(!TOK){NT='Log in first.';render();return}NT='Testing, please wait...';render();try{await gh('check.json',{t:Date.now()});NT='Connection OK: the token can save to GitHub.'}catch(e){var m=String((e&&e.message)||'');NT='Test failed: '+m+((m.indexOf('401')===0||m.indexOf('403')===0)?' | The token cannot write. Make a new token: only repository NCERT-Hb, Contents = Read and write.':(m.indexOf('404')===0?' | The token cannot see NCERT-Hb. Make a new token and select the repository NCERT-Hb.':''))}render()}
+async function pub(){
+ try{
+  if(!TOK){NT='GitHub token missing. Log in again with the token.';render();return}
+  NT='Preparing, please wait...';render();var GS=(await sh([PW,'salt'])).slice(0,16),cache={},files=[];
+  for(var i=0;i<CLASSES.length;i++){var k=CLASSES[i],cl=[],ev={};NT='Preparing '+(i+1)+' of '+CLASSES.length+' (with many passwords this can take 1-3 minutes)...';render();await new Promise(function(r){setTimeout(r,0)});
+   for(var j=0;j<chs(k).length;j++){var ch=chs(k)[j],o={id:ch.id,name:ch.name,price:ch.price||'',subs:[],sj:(k<100?sjOf(ch):undefined)};if(pwl(ch.pw).length)o.lk=1;
+    var m={};
+    for(var q=0;q<ch.subs.length;q++){var s=ch.subs[q],r={id:s.id,name:s.name};if(s.price)r.price=s.price;var cont={body:s.body||'',files:s.files||[]};m[s.id]=cont;
+     if(pwl(s.pw).length){r.lk=1;r.sp=1;ev['s'+s.id]=await encM(pwl(s.pw),cont,GS,cache,PW)}else if(pwl(ch.pw).length&&!(D._fp&&q===0&&ch.subs.length>1)){r.lk=1}else{r.body=cont.body;r.files=cont.files}
+     o.subs.push(r)}
+    if(pwl(ch.pw).length)ev[ch.id]=await encM(pwl(ch.pw),m,GS,cache,PW);
+    cl.push(o)}
+   files.push(['c'+k+'.json',{cl:cl,e:ev}])}
+  var enc=await encr(PW,D),total=files.length+2,n=0;
+  for(var f=0;f<files.length;f++){NT='Publishing '+(++n)+' of '+total+'...';render();await gh(files[f][0],files[f][1])}
+  NT='Publishing '+(++n)+' of '+total+'...';render();
+  await gh('data.json',{m:{contact:D._contact||'',wa:D._wa||'',qr:D._qr||'',how:D._how||'',log:D._log||'',upi:D._upi||'',upn:D._upn||''},cls:CLASSES,v:Date.now()});
+  NT='Publishing '+(++n)+' of '+total+' (biggest file, can take 1-2 minutes, please wait)...';render();
+  await gh('own.json',{c:enc});
+  try{localStorage.removeItem('nch_draft')}catch(e){}
+  DIRTY=false;NT='Published. Students will see it in 1-2 minutes.';render();
+ }catch(e){NT='Could not publish: '+((e&&e.message)||'');render()}
+}
+async function tlLogin(){
+ var pw=document.getElementById('tpw').value,tk=document.getElementById('ttk').value.trim();
+ if(!pw||!tk){msg('Enter both password and token');return}
+ msg('Checking, please wait...');
+ try{var r=await fetch('own.json?t='+Date.now());SEED=(await r.json()).c||''}catch(e){msg('Could not load data. Check internet.');return}
+ if(!SEED){if(pw.length<10){msg('Choose a NEW password, at least 10 characters');return}
+  OWNER=true;U=true;S.edit=true;PW=pw;if(LAZY){for(var z=0;z<PCL.length;z++){if(!LOADED[PCL[z]])await loadClass(PCL[z])}}D=JSON.parse(JSON.stringify(LAZY?D:(PUB&&PUB.cl?PUB.cl:{})));D._contact=(PUB&&PUB.contact)||'';D._wa=(PUB&&PUB.wa)||'';D._qr=(PUB&&PUB.qr)||'';if(!D._ss){D._ss=1;loadDef()}TOK=tk;DIRTY=true;
+  try{localStorage.setItem('nch_tk',tk);localStorage.setItem('nch_pw',pw)}catch(e){}
+  V={v:'home'};NT='New password set. Make your edits, then tap Publish to save it.';render();return}
+ OWNER=true;PW='';await unlock(pw,false);
+ if(!PW){OWNER=false;D=LAZY?{}:(PUB&&PUB.cl?PUB.cl:{});LOADED={};return}
+ TOK=tk;try{localStorage.setItem('nch_tk',tk)}catch(e){}V={v:'home'};NT='Logged in as teacher. Open a class to add or edit.';render()
+}
+function setPw(){var v=document.getElementById('np').value;if(v.length<10){NT='Use at least 10 characters';render();return}PW=v;DIRTY=true;try{localStorage.setItem('nch_pw',v)}catch(e){}NT='Password changed. Now tap Publish.';render()}
+function ld(){try{var s=localStorage.getItem('nch_s');if(s)S=Object.assign(S,JSON.parse(s))}catch(e){}}
+function sv(){try{localStorage.setItem('nch_s',JSON.stringify(S))}catch(e){}}
+function dd(){DIRTY=true;sv();if(OWNER){try{localStorage.setItem('nch_draft',JSON.stringify(D))}catch(e){}}}
+function esc(t){return String(t).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function chs(c){return D[c]=D[c]||[]}
+function chp(){return chs(V.c).find(function(x){return x.id===V.h})}
+function sub(){return chp().subs.find(function(x){return x.id===V.s})}
+function applyS(){var r=document.documentElement;S.theme==='auto'?r.removeAttribute('data-theme'):r.setAttribute('data-theme',S.theme);r.style.setProperty('--fs',S.fs+'px');r.setAttribute('data-hc',S.hc?'1':'0')}
+async function loadClass(c){try{var r=await fetch('c'+c+'.json?t='+Date.now());var j=await r.json();D[c]=j.cl||[];Object.assign(PENC,j.e||{});dedupe();LOADED[c]=1;await autoOpen(c)}catch(e){D[c]=[];LOADED[c]=2;NT='Could not load this class. Check your internet.'}}
+async function go(x){V=x;NT='';if(x.v==='act'&&OWNER){render();await actSync();return}try{lgView()}catch(e){}if(x.v==='cls'&&LAZY&&!OWNER&&!LOADED[x.c]){render();await loadClass(x.c)}render();window.scrollTo(0,0)}
+function addCh(){var n=document.getElementById('in').value.trim();if(!n)return;chs(V.c).push({id:++IDC,name:n,subs:[],sj:(V.c<100?(SG[V.c]||'B'):undefined)});dd();render()}
+function addSub(){var n=document.getElementById('in').value.trim();if(!n)return;chp().subs.push({id:++IDC,name:n,body:'',files:[]});dd();render()}
+function delCh(id){ask('Delete this chapter?',function(){D[V.c]=chs(V.c).filter(function(x){return x.id!==id});dd();render()})}
+function delSub(id){ask('Delete this topic?',function(){var h=chp();h.subs=h.subs.filter(function(x){return x.id!==id});dd();render()})}
+function delFile(id){ask('Remove this file from the topic?',function(){var s=sub();s.files=s.files.filter(function(f){return f.id!==id});dd();render()})}
+function saveBody(){sub().body=document.getElementById('bd').value;dd();document.getElementById('ok').textContent='✔ Saved. Tap Publish to show students.'}
+async function up(t,inp){var f=inp.files[0];if(!f)return;var st=document.getElementById('ok');st.textContent='Uploading…';
+ try{var b=sub();b.body=document.getElementById('bd').value;if(t!=='pdf'&&f.size>60000){if(!TOK){st.textContent='Please log in as teacher first.';return}st.textContent='Uploading '+Math.round(f.size/1e5)/10+' MB, please wait (can take a few minutes)...';var pth=await ghFile(f);b.files=b.files||[];b.files.push({id:'F'+(++IDC),name:f.name,t:t,url:pth});dd();NT='Uploaded. Students will see it after you tap Publish.';render();return}if(f.size<=4000000){var dd2=await rd(f);b.files=b.files||[];b.files.push({id:'F'+(++IDC),name:f.name,t:t,data:dd2});dd();render();return}st.textContent='File is too big (max 4 MB). Use Add link instead.'}catch(e){st.textContent='Upload failed: '+((e&&e.message)||'')+((f&&f.size>20000000)?' | Tip: use Wi-Fi, or split the audio into parts of about 10 minutes, or lower the recording quality.':'')}}
+function payHtml(price,label){var u=PUB&&PUB.upi,btn='<p><button class="btn sec" style="width:100%" onclick="askT(1)">Send payment screenshot</button></p>';if(!u)return btn;var am=String(price||'').replace(/[^0-9.]/g,''),l='upi://pay?pa='+encodeURIComponent(u)+'&pn='+encodeURIComponent(PUB.upn||'NCERT Hub')+(am?'&am='+am:'')+'&cu=INR&tn='+encodeURIComponent(String(label||'NCERT Hub').slice(0,40));return '<p><a class="btn" href="'+esc(l)+'" style="display:block;text-align:center;text-decoration:none">Pay '+esc(price||'')+' with UPI app</a></p>'+btn}
+function howHtml(){var t=(PUB&&PUB.how)||'',c=(PUB&&PUB.contact)?'<p class="mu">'+esc(PUB.contact)+'</p>':'';return (t?'<div class="mu" style="white-space:pre-wrap;margin:6px 0">'+esc(t)+'</div>':'<ol class="mu" style="margin:6px 0 10px 18px;padding:0"><li>Tap <b>Pay</b> and pay the amount in your UPI app (or scan the QR).</li><li>Tap <b>Send payment screenshot</b>.</li><li>The teacher sends you the password. Type it below and tap Unlock.</li></ol>')+c+((PUB&&PUB.log)?'<p class="mu">For safety, the app records a random device code with each unlock attempt.</p>':'')}
+var DEFQR='';
+function qrHtml(){return ((PUB&&PUB.qr)||DEFQR)?'<p class="mu">Scan to pay:</p><img src="'+((PUB&&PUB.qr)||DEFQR)+'" style="max-width:240px;width:100%;border-radius:8px;margin-bottom:8px">':''}
+async function openSub(){var s=sub(),pw=document.getElementById('spw').value;try{var d=await dec2(pw,PENC['s'+s.id]);s.body=d.body;s.files=d.files;s.open=true;try{var q=JSON.parse(localStorage.getItem('nch_cp')||'{}');q['s'+s.id]=pw;localStorage.setItem('nch_cp',JSON.stringify(q))}catch(e){}lg('unlock_ok',Object.assign(ctx(),{ok:1,lvl:'topic',pk:await pcode(pw)}));render()}catch(e){lg('unlock_fail',Object.assign(ctx(),{ok:0,lvl:'topic'}));msg('Wrong password')}}
+function subAcc(T){if(OWNER&&S.edit)return '<details class="box"'+((T.price||T.pw)?' open':'')+'><summary>This topic: price &amp; password</summary><input id="sprice" placeholder="Price for this topic (empty = none)" value="'+esc(T.price||'')+'" style="margin:6px 0"><input id="spass" placeholder="Topic password(s): one per buyer, separated by commas" value="'+esc(T.pw||'')+'" style="margin-bottom:6px"><button class="btn" onclick="saveSubAcc()">Save</button></details>';
+ if(!OWNER&&T.lk&&!T.open)return '<div class="box"><b>\ud83d\udd12 '+(T.sp?(T.price?'Topic price: '+esc(T.price):'Locked topic'):'Part of a paid chapter')+'</b>'+(T.sp?howHtml()+payHtml(T.price,CL(V.c)+' '+T.name)+qrHtml()+'<input id="spw" type="password" placeholder="Topic password"><p><button class="btn" onclick="openSub()">Unlock</button></p><p id="lm" style="color:var(--dn)"></p>':'<p class="mu">Unlock the whole chapter from the chapter page.</p>')+'</div>';return ''}
+function saveSubAcc(){var T=sub();T.price=document.getElementById('sprice').value.trim();T.pw=document.getElementById('spass').value.trim();dd();NT='Saved. Tap Publish to apply.';render()}
+function accBox(C){if(OWNER&&S.edit)return '<details class="box"'+((C.price||C.pw)?' open':'')+'><summary>Whole chapter: price &amp; password</summary><input id="pr" placeholder="Price, e.g. ₹199 (empty = free)" value="'+esc(C.price||'')+'" style="margin:6px 0"><input id="cp" placeholder="Chapter password(s): one per buyer, separated by commas" value="'+esc(C.pw||'')+'" style="margin-bottom:6px"><button class="btn" onclick="saveAcc()">Save</button></details>';if(C.lk&&!C.open)return '<div class="box"><b>🔒 '+(C.price?'Full chapter price: '+esc(C.price):'Locked chapter')+'</b>'+howHtml()+payHtml(C.price,CL(V.c)+' '+C.name)+qrHtml()+'<input id="cpw" type="password" placeholder="Chapter password"><p><button class="btn" onclick="openCh()">Unlock</button></p><p id="lm" style="color:var(--dn)"></p></div>';return ''}
+function saveAcc(){var C=chp();C.price=document.getElementById('pr').value.trim();C.pw=document.getElementById('cp').value.trim();dd();NT='Saved. Tap Publish to apply.';render()}
+function mergeCh(C,m){C.subs.forEach(function(s){var d=m[s.id];if(d){s.body=d.body;s.files=d.files;s.open=true}});C.open=true}
+async function openCh(){var C=chp(),pw=document.getElementById('cpw').value;try{mergeCh(C,await dec2(pw,PENC[C.id]));try{var q=JSON.parse(localStorage.getItem('nch_cp')||'{}');q[C.id]=pw;localStorage.setItem('nch_cp',JSON.stringify(q))}catch(e){}lg('unlock_ok',Object.assign(ctx(),{ok:1,lvl:'chapter',pk:await pcode(pw)}));render()}catch(e){lg('unlock_fail',Object.assign(ctx(),{ok:0,lvl:'chapter'}));msg('Wrong password')}}
+async function autoOpen(only){var q={};try{q=JSON.parse(localStorage.getItem('nch_cp')||'{}')}catch(e){}for(var c=0;c<CLASSES.length;c++){if(only&&CLASSES[c]!==only)continue;var L=chs(CLASSES[c]);for(var i=0;i<L.length;i++){var C=L[i];if(C.lk&&q[C.id]&&PENC[C.id]){try{mergeCh(C,await dec2(q[C.id],PENC[C.id]))}catch(e){}}for(var z=0;z<C.subs.length;z++){var S3=C.subs[z];if(S3.sp&&!S3.open&&q['s'+S3.id]&&PENC['s'+S3.id]){try{var d3=await dec2(q['s'+S3.id],PENC['s'+S3.id]);S3.body=d3.body;S3.files=d3.files;S3.open=true}catch(e){}}}}}}
+function addLink(){var u=document.getElementById('lk').value.trim();if(u.indexOf('http')!==0){NT='Link must start with http';render();return}var s=sub();s.body=document.getElementById('bd').value;s.files=s.files||[];s.files.push({id:'L'+(++IDC),name:u.length>40?u.slice(0,40)+'...':u,t:'link',url:u});dd();render()}
+var LINK='https://maa734061-creator.github.io/NCERT-Hb/';
+async function copyLink(){try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(LINK);NT='Link copied. Paste it in WhatsApp to share.';render();return}}catch(e){}try{if(navigator.share){await navigator.share({title:'NCERT Education Hub',url:LINK});return}}catch(e){}NT='Could not copy automatically. Press and hold the link below, then copy.';render()}
+function rd(f){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(r.result)};r.onerror=rej;r.readAsDataURL(f)})}
+function openFile(id){var f=sub().files.find(function(x){return x.id===id});if(!f)return;var p=f.data.split(','),m=p[0].split(':')[1].split(';')[0],b=atob(p[1]),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);var url=URL.createObjectURL(new Blob([u],{type:m}));var a=document.createElement('a');a.href=url;a.download=(f.name||'notes')+'.pdf';a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},60000)}
+async function bulkAdd(inp){var fs=Array.from(inp.files),n=0,sk=0;for(var i=0;i<fs.length;i++){var f=fs[i],p=f.name.split('-');if(p.length<4||p[0].indexOf('Class')!==0||p[1].indexOf('Ch')!==0||f.size>4000000){sk++;continue}var L=chs(parseInt(p[0].slice(5))),C=L[parseInt(p[1].slice(2))-1],S2=C&&C.subs[parseInt(p[2])-1];if(!S2){sk++;continue}S2.files=S2.files||[];var nm=p.slice(3).join(' ').replace('.pdf','');if(S2.files.some(function(x){return x.name===nm})){continue}S2.files.push({id:'F'+(++IDC),name:nm,t:'pdf',data:await rd(f)});n++}dd();NT='Added '+n+' file(s)'+(sk?', skipped '+sk:'')+'. Now tap Publish.';render()}
+var REC=null,RCH=[];
+async function recStart(){if(REC)return;try{var s=await navigator.mediaDevices.getUserMedia({audio:true});RCH=[];REC=new MediaRecorder(s);REC.ondataavailable=function(e){if(e.data.size)RCH.push(e.data)};REC.onstop=async function(){s.getTracks().forEach(function(t){t.stop()});var b=new Blob(RCH,{type:REC.mimeType||'audio/webm'});REC=null;if(!TOK){NT='Please log in as teacher first.';render();return}NT='Uploading voice note, please wait...';render();try{var ext=(b.type||'').indexOf('mp4')>-1?'m4a':'webm',pth=await ghFile(new File([b],'voice.'+ext)),x=sub();x.files=x.files||[];x.files.push({id:'F'+(++IDC),name:'Voice note '+new Date().toLocaleString(),t:'audio',url:pth});dd();NT='Voice note uploaded. Tap Publish to show students.';render()}catch(e){NT='Upload failed: '+((e&&e.message)||'');render()}};REC.start();render()}catch(e){NT='Microphone is blocked here. Use the Phone recorder button instead.';render()}}
+function recStop(){if(REC)REC.stop()}
+function askT(tx){var w=((PUB&&PUB.wa)||D._wa||'').trim();if(!w){NT='Teacher has not added a contact yet.';render();return}var cx='';if(V.c)cx=CL(V.c);try{if(V.h)cx+=' / '+chp().name;if(V.s)cx+=' / '+sub().name}catch(e){}var t;
+ if(tx===1){var pr='';try{pr=V.v==='sub'?(sub().price||chp().price):chp().price}catch(e){}t='I have paid '+(pr||'')+' for '+cx+'. Payment screenshot attached. Phone code '+did()+'. Please send the password.'}else t='Doubt from NCERT Education Hub: '+cx+'. My question: ';
+ var u;if(w.indexOf('http')===0)u=w;else if(w.indexOf('@')>0)u='mailto:'+w+'?subject='+encodeURIComponent(t);else u='https://wa.me/'+w.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(t);var a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+function mu(f){if(!f.data)return f.url||('/_blob/'+f.id);var M={m4a:'audio/mp4',mp4:'video/mp4',mp3:'audio/mpeg',wav:'audio/wav',aac:'audio/aac',ogg:'audio/ogg',oga:'audio/ogg',webm:f.t==='video'?'video/webm':'audio/webm'},m=M[((f.name||'').split('.').pop()||'').toLowerCase()];return m?f.data.replace(/^data:[^,]*,/,'data:'+m+';base64,'):f.data}
+async function qrUp(inp){var f=inp.files[0];if(!f)return;if(f.size>1500000){NT='Image is too big (max 1.5 MB).';render();return}D._qr=await rd(f);dd();NT='QR image saved. Tap Publish.';render()}
+async function ghFile(f){var ext=((f.name.split('.').pop())||'bin').toLowerCase().replace(/[^a-z0-9]/g,'')||'bin',path='media/'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)+'.'+ext;
+ if(f.size>90000000)throw new Error('File is over 90 MB ('+Math.round(f.size/1e6)+' MB). Use a lower quality, or a YouTube/Drive link.');
+ var api='https://api.github.com/repos/maa734061-creator/NCERT-Hb/git/',hd={Authorization:'Bearer '+TOK,Accept:'application/vnd.github+json','Content-Type':'application/json'};
+ async function J(u,o){var r=await fetch(api+u,Object.assign({headers:hd},o||{}));if(!r.ok)throw new Error(r.status+' '+(await r.text()).slice(0,80));return r.json()}
+ var buf=new Uint8Array(await f.arrayBuffer());
+ var blob=await J('blobs',{method:'POST',body:JSON.stringify({content:b2s(buf),encoding:'base64'})});
+ var ref=await J('ref/heads/main'),cm=await J('commits/'+ref.object.sha);
+ var tree=await J('trees',{method:'POST',body:JSON.stringify({base_tree:cm.tree.sha,tree:[{path:path,mode:'100644',type:'blob',sha:blob.sha}]})});
+ var nc=await J('commits',{method:'POST',body:JSON.stringify({message:'Add media',tree:tree.sha,parents:[ref.object.sha]})});
+ await J('refs/heads/main',{method:'PATCH',body:JSON.stringify({sha:nc.sha})});
+ return path}
+function did(){var d='';try{d=localStorage.getItem('nch_did')||'';if(!d){d=Array.from(crypto.getRandomValues(new Uint8Array(6))).map(function(x){return ('0'+x.toString(16)).slice(-2)}).join('');localStorage.setItem('nch_did',d)}}catch(e){}return d||'unknown'}
+async function pcode(p){var h=new Uint8Array(await crypto.subtle.digest('SHA-256',TE.encode('nch:'+p)));return Array.from(h.slice(0,3)).map(function(x){return ('0'+x.toString(16)).slice(-2)}).join('')}
+var PHM='';try{if(navigator.userAgentData&&navigator.userAgentData.getHighEntropyValues)navigator.userAgentData.getHighEntropyValues(['model']).then(function(v){PHM=v.model||''}).catch(function(){})}catch(e){}
+function lgSend(u,x){try{
+ if(u.indexOf('ntfy.sh/')>-1){var T={app_open:'App opened',view_class:'Class opened',view_chapter:'Chapter opened',view_topic:'Topic opened',view_locked:'LOCKED page opened',unlock_ok:'UNLOCKED',unlock_fail:'Wrong password',test:'Test OK'},big=(x.ev==='unlock_ok'||x.ev==='unlock_fail'||x.ev==='test'),line=[x.cls,x.ch,x.sub].filter(Boolean).join(' / '),body=(line?line+'\n':'')+'Phone '+(x.ph||'unknown')+' | id '+x.d+(x.pk?' | pw code '+x.pk:'');
+  fetch(u+'?title='+encodeURIComponent(T[x.ev]||x.ev)+'&priority='+(big?3:1),{method:'POST',mode:'no-cors',keepalive:true,body:body}).catch(function(){});return}
+ fetch(u,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify(x)}).catch(function(){})}catch(e){}}
+function lg(ev,x){var u=PUB&&PUB.log;if(!u||OWNER)return;x=x||{};x.d=did();x.ev=ev;x.ua=(navigator.userAgent||'').slice(0,120);x.ph=PHM;lgSend(u,x)}
+function ctx(){var o={cls:CL(V.c)};try{o.ch=chp().name}catch(e){}try{if(V.s)o.sub=sub().name}catch(e){}return o}
+var SEEN={};
+function lgView(){
+ if(V.v==='cls'){if(!SEEN['k'+V.c]){SEEN['k'+V.c]=1;lg('view_class',{cls:CL(V.c)})}}
+ else if(V.v==='ch'){var C=chp();if(C&&!SEEN['c'+C.id]){SEEN['c'+C.id]=1;lg((C.lk&&!C.open)?'view_locked':'view_chapter',Object.assign(ctx(),{lvl:'chapter'}))}}
+ else if(V.v==='sub'){var T=sub();if(T&&!SEEN['s'+T.id]){SEEN['s'+T.id]=1;lg((T.lk&&!T.open)?'view_locked':'view_topic',Object.assign(ctx(),{lvl:'topic'}))}}}
+function saveLog(){D._log=document.getElementById('lgu').value.trim();dd();NT='Saved. Tap Publish to start recording.';render()}
+function lgTest(){var u=(document.getElementById('lgu').value||D._log||'').trim();if(!u){NT='Paste the link first.';render();return}lgSend(u,{d:'teacher-test',ev:'test',ua:(navigator.userAgent||'').slice(0,120)});NT='Test sent. Check the log sheet in about a minute.';render()}
+async function pcShow(){var p=document.getElementById('pcin').value;NT=p?'Code for that password: '+await pcode(p):'Type a password first.';render()}
+var ACT=[];try{ACT=JSON.parse(localStorage.getItem('nch_act')||'[]')}catch(e){}
+var ENAME={'App opened':'app_open','Class opened':'view_class','Chapter opened':'view_chapter','Topic opened':'view_topic','LOCKED page opened':'view_locked','UNLOCKED':'unlock_ok','Wrong password':'unlock_fail','Test OK':'test'};
+function mkLog(){if((D._log||'').indexOf('ntfy.sh/')>-1){NT='The private link already exists.';render();return}var a='abcdefghijklmnopqrstuvwxyz0123456789',r='',b=crypto.getRandomValues(new Uint8Array(12));for(var i=0;i<12;i++)r+=a[b[i]%a.length];D._log='https://ntfy.sh/ncerthub-'+r;dd();NT='Private activity link made. Now tap Publish to start recording.';render()}
+async function actSync(){var u=(D._log||'').trim();if(u.indexOf('ntfy.sh/')<0){NT='First tap Make private activity link (in Settings), then Publish.';render();return}
+ try{var r=await fetch(u.replace(/\/+$/,'')+'/json?poll=1&since=all'),tx=await r.text(),have={};ACT.forEach(function(a){have[a.id]=1});
+  tx.split('\n').forEach(function(l){l=l.trim();if(!l)return;try{var m=JSON.parse(l);if(m.event!=='message'||have[m.id])return;var ln=String(m.message||'').split('\n'),a=(ln.length>1?ln[0]:'').split(' / '),b=ln[ln.length-1],pm=b.match(/Phone (.*?) \| id (\S+)/),pk=b.match(/pw code (\S+)/);ACT.push({id:m.id,t:m.time,ev:ENAME[m.title]||m.title||'',cls:a[0]||'',ch:a[1]||'',sub:a[2]||'',ph:pm?pm[1]:'',d:pm?pm[2]:'',pk:pk?pk[1]:''})}catch(e){}});
+  ACT.sort(function(x,y){return x.t-y.t});if(ACT.length>6000)ACT=ACT.slice(-6000);try{localStorage.setItem('nch_act',JSON.stringify(ACT))}catch(e){}NT='Updated. '+ACT.length+' events saved on this phone.'}catch(e){NT='Could not read the activity. Check your internet.'}render()}
+function actHtml(){var E=ACT.filter(function(a){return a.ev!=='test'}),ph={},cl={},uc={},day=Math.floor(Date.now()/1000)-86400,d24={},T=function(t){return new Date(t*1000).toLocaleString()};
+ E.forEach(function(a){var p=ph[a.d]=ph[a.d]||{n:0,last:0,ph:'',cls:{},ok:0,bad:0};p.n++;if(a.t>p.last)p.last=a.t;if(a.ph)p.ph=a.ph;if(a.t>day)d24[a.d]=1;
+  if(a.cls&&(a.ev==='view_class'||a.ev==='view_chapter'||a.ev==='view_topic'||a.ev==='view_locked'))p.cls[a.cls]=1;if(a.ev==='unlock_ok')p.ok++;if(a.ev==='unlock_fail')p.bad++;
+  if(a.ev==='view_class'){var c=cl[a.cls]=cl[a.cls]||{d:{},n:0};c.d[a.d]=1;c.n++}
+  if(a.ev==='unlock_ok'){var k=a.cls+' / '+a.ch+(a.sub?' / '+a.sub:'')+' / code '+a.pk;uc[k]=uc[k]||{d:{},n:0};uc[k].d[a.d]=1;uc[k].n++}});
+ var np=Object.keys(ph).length,h='<p><button class="btn" onclick="actSync()">Refresh</button> <button class="btn sec" onclick="ask(\'Clear the saved history on this phone?\',function(){ACT=[];try{localStorage.removeItem(\'nch_act\')}catch(e){}render()})">Clear</button></p>';
+ if(!E.length)return h+'<p class="mu">No activity yet. Make the private activity link, Publish, and then open this page again after students use the app. (The free service keeps events for about 12 hours, so open this page at least once a day.)</p>';
+ h+='<div class="row"><span><b>'+np+'</b> different phones in total, <b>'+Object.keys(d24).length+'</b> in the last 24 hours. <b>'+E.length+'</b> actions saved.</span></div><h3>Classes opened</h3>';
+ Object.keys(cl).sort(function(a,b){return Object.keys(cl[b].d).length-Object.keys(cl[a].d).length}).forEach(function(k){h+='<div class="row"><span>'+esc(k)+' - '+Object.keys(cl[k].d).length+' phones, '+cl[k].n+' opens</span></div>'});
+ h+='<h3>Password use (same code on many phones means it was shared)</h3>';var ks=Object.keys(uc);if(!ks.length)h+='<p class="mu">No chapter unlocked yet.</p>';ks.sort(function(a,b){return Object.keys(uc[b].d).length-Object.keys(uc[a].d).length}).forEach(function(k){var n=Object.keys(uc[k].d).length;h+='<div class="row"><span>'+esc(k)+' - <b'+(n>1?' style="color:var(--dn)"':'')+'>'+n+' phone'+(n>1?'s':'')+'</b></span></div>'});
+ h+='<h3>Phones</h3>';Object.keys(ph).sort(function(a,b){return ph[b].last-ph[a].last}).forEach(function(d){var p=ph[d];h+='<div class="row"><span><b>'+esc(p.ph||'Phone')+'</b> (id '+esc(d)+')<br><small class="mu">Last seen '+T(p.last)+' - '+p.n+' actions - classes: '+esc(Object.keys(p.cls).join(', ')||'-')+' - unlocked '+p.ok+', wrong password '+p.bad+'</small></span></div>'});
+ h+='<h3>Recent activity</h3>';E.slice(-40).reverse().forEach(function(a){var L={app_open:'Opened the app',view_class:'Opened a class',view_chapter:'Opened a chapter',view_topic:'Opened a topic',view_locked:'Opened a LOCKED page',unlock_ok:'UNLOCKED',unlock_fail:'Wrong password'};h+='<div class="row"><span>'+(L[a.ev]||esc(a.ev))+' <small class="mu">'+esc([a.cls,a.ch,a.sub].filter(Boolean).join(' / '))+'<br>'+T(a.t)+' - '+esc(a.ph||'phone')+' ('+esc(a.d)+')</small></span></div>'});
+ return h}
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e});
+function installApp(){var e=window.__bip;if(e){e.prompt();window.__bip=null;return}NT='To install: open the browser menu and tap Add to Home screen (or Install app).';render()}
+async function shareApp(){var u=location.href.split('?')[0].split('#')[0];try{if(navigator.share){await navigator.share({title:'NCERT Education Hub',url:u});return}}catch(e){return}try{await navigator.clipboard.writeText(u);NT='Link copied. Paste it in WhatsApp to share.'}catch(e){NT='Copy this link: '+u}render()}
+function addBox(ph,fn){return S.edit?'<div class="add"><input id="in" placeholder="'+ph+'"><button class="btn" onclick="'+fn+'()">Add</button></div>':''}
+function lockHtml(){
+ var t=SEED?(OWNER?'🔒 Teacher login: enter your password':'🔒 Enter password to view content'):(OWNER?'First time: create your password (share it with students)':'Content coming soon.');
+ var f=(SEED||OWNER)?'<input id="pw" type="password" placeholder="Password"><p><button class="btn" onclick="unlock(document.getElementById(\'pw\').value,'+(!SEED)+')">'+(SEED?'Unlock':'Set password')+'</button></p>':'';
+ return '<div style="text-align:center;padding:30px 0"><h2>'+t+'</h2>'+f+'<p id="lm" style="color:var(--dn)"></p><p class="mu">Contact your teacher to get the password.</p></div>';
+}
+var MAXP=5;
+function plays(id){var q={};try{q=JSON.parse(localStorage.getItem('nch_pc')||'{}')}catch(e){}return q[id]||0}
+function pc(el,id){if(el._c)return;var q={};try{q=JSON.parse(localStorage.getItem('nch_pc')||'{}')}catch(e){}var n=q[id]||0;if(n>=MAXP){el.pause();render();return}if(el.currentTime<3){q[id]=n+1;try{localStorage.setItem('nch_pc',JSON.stringify(q))}catch(e){}el._c=1}}
+function filesHtml(s){var lim=false;try{lim=!OWNER&&(s.lk||chp().lk)}catch(e){}var A=function(f){return lim?' controlsList="nodownload" oncontextmenu="return false" onended="this._c=0" onplay="pc(this,\''+s.id+'_'+f.id+'\')"':''};var hasM=(s.files||[]).some(function(f){return f.t==='audio'||f.t==='video'});var info='';return info+(s.files||[]).map(function(f){var d=S.edit?'<button class="del" onclick="delFile(\''+f.id+'\')">🗑</button>':'';
+ if(lim&&plays(s.id+'_'+f.id)>=MAXP&&(f.t==='video'||f.t==='audio'))return '<div class="row">'+(f.t==='video'?'\ud83c\udfac ':'\ud83c\udfa7 ')+esc(f.name)+' - all '+MAXP+' plays used</div>';if(f.t==='video')return '<div class="row"><div style="flex:1"><div>🎬 '+esc(f.name)+'</div><video controls preload="none" playsinline'+A(f)+' src="'+mu(f)+'" style="width:100%;margin-top:6px"></video>'+(lim?'<div class="mu">Plays used: '+plays(s.id+'_'+f.id)+' of '+MAXP+'</div>':'')+'</div>'+d+'</div>';if(f.t==='link')return '<div class="row"><span>'+((f.url||'').indexOf('http')===0?'<a href="'+esc(f.url)+'" target="_blank" rel="noopener" style="color:var(--pr)">🔗 '+esc(f.name)+'</a>':esc(f.name))+'</span>'+d+'</div>';return f.t==='audio'?'<div class="row"><div style="flex:1"><div>🎧 '+esc(f.name)+'</div><audio controls preload="none"'+A(f)+' src="'+mu(f)+'" style="width:100%;margin-top:6px"></audio>'+(lim?'<div class="mu">Plays used: '+plays(s.id+'_'+f.id)+' of '+MAXP+'</div>':'')+'</div>'+d+'</div>':'<div class="row"><span>'+(f.data?'<a href="#" onclick="openFile(\''+f.id+'\');return false" style="color:var(--pr)">📄 '+esc(f.name)+' (tap to open)</a>':'<a href="/_blob/'+f.id+'" target="_blank" rel="noopener" style="color:var(--pr)">📄 '+esc(f.name)+'</a>')+'</span>'+d+'</div>'}).join('')}
+function render(){
+ var a=document.getElementById('app'),h='';
+ if(!U&&V.v!=='pri'&&V.v!=='tl'){a.innerHTML=lockHtml();return}
+ ['home','set','pri'].forEach(function(k){document.getElementById('n-'+k).className=(V.v===k||(k==='home'&&['cls','ch','sub'].indexOf(V.v)>-1))?'on':''});
+ var bn=(OWNER&&DIRTY)?'<div class="pubbar"><span>● Changes not published yet</span><button class="btn sm" onclick="pub()">Publish</button></div>':'';
+ if(V.v==='home'){var tile=function(c){return '<div class="tile" onclick="go({v:\'cls\',c:'+c+'})"><small>Class</small><b>'+(c>100?c-100:c)+'</b></div>'},showSS=OWNER||PCL.indexOf(106)>-1||(D[106]&&D[106].length);h='<div class="hero"><h2>Learn at your own pace</h2><p>Notes, audio and PDFs for NCERT Science and Social Science. Pick your class to begin.</p></div><div class="subj sci"><div class="subh"><span class="sic">🔬</span><div><h3>Science</h3><small>Biology · Physics · Chemistry</small></div></div><div class="grid3">'+[6,7,8,9,10,11,12].map(tile).join('')+'</div></div>'+(showSS?'<div class="subj soc"><div class="subh"><span class="sic">🌏</span><div><h3>Social Science</h3><small>History · Geography · Civics · Economics</small></div></div><div class="grid3">'+[106,107,108,109,110,111,112].map(tile).join('')+'</div></div>':'')}
+ else if(V.v==='cls'&&LAZY&&!OWNER&&!LOADED[V.c]){h='<p class="mu">Loading, please wait...</p>'}
+ else if(V.v==='cls'){var L=chs(V.c),sci=V.c<100,sg=SG[V.c],cnt={B:0,P:0,C:0,O:0};
+  if(sci){L.forEach(function(x){cnt[sjOf(x)]++});if(!sg||(!cnt[sg]&&!S.edit))sg=['B','P','C','O'].filter(function(k){return cnt[k]})[0]||'B';SG[V.c]=sg}
+  var LL=sci?L.filter(function(x){return sjOf(x)===sg}):L,TB=[['B','Biology'],['P','Physics'],['C','Chemistry'],['O','Other']];
+  var tabs=sci?'<div class="tabs">'+TB.filter(function(t){return t[0]!=='O'||cnt.O||sg==='O'}).map(function(t){return '<button class="tab'+(t[0]===sg?' on':'')+'" onclick="SG['+V.c+']=\''+t[0]+'\';render()">'+t[1]+'<em>'+cnt[t[0]]+'</em></button>'}).join('')+'</div>':'';
+  h='<span class="crumb" onclick="go({v:\'home\'})">← Home</span><h2>'+CL(V.c)+'</h2><p class="mu sub">'+LL.length+' chapters'+(sci?' in this portion':'')+'</p>'+tabs+addBox('New chapter name'+(sci?' (added to the selected portion)':''),'addCh')+(LL.length?LL.map(function(x,i){return '<div class="row ch"><span class="lnk" onclick="go({v:\'ch\',c:'+V.c+',h:'+x.id+'})"><b class="num">'+(i+1)+'</b><span class="nm">'+esc(sci?pf(x.name):x.name)+'</span><span class="chips">'+((x.lk||x.pw)?'<i class="chip">🔒</i>':'')+(x.price?'<i class="chip price">'+esc(x.price)+'</i>':'')+'</span></span>'+(S.edit?'<button class="del" onclick="delCh('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<div class="empty"><span>📭</span><p>No chapters here yet.</p></div>')}
+ else if(V.v==='ch'){var C=chp();h='<span class="crumb" onclick="go({v:\'cls\',c:'+V.c+'})">← '+CL(V.c)+'</span><h2>'+esc(C.name)+'</h2><p class="mu sub">'+C.subs.length+' topics'+(C.price?' · Full chapter '+esc(C.price):'')+'</p>'+portionBox(C)+accBox(C)+addBox('New sub-topic','addSub')+(C.subs.length?C.subs.map(function(x,i){return '<div class="row ch"><span class="lnk" onclick="go({v:\'sub\',c:'+V.c+',h:'+V.h+',s:'+x.id+'})"><b class="num">'+(i+1)+'</b><span class="nm">'+esc(x.name)+'</span><span class="chips">'+(((x.files&&x.files.length)||x.body)?'<i class="chip ok">✓</i>':'')+((x.lk&&!x.open)?'<i class="chip">🔒</i>'+(x.price?'<i class="chip price">'+esc(x.price)+'</i>':''):'')+'</span></span>'+(S.edit?'<button class="del" onclick="delSub('+x.id+')">🗑</button>':'')+'</div>'}).join(''):'<div class="empty"><span>📭</span><p>No sub-topics yet.</p></div>')}
+ else if(V.v==='sub'){var T=sub(),FH=filesHtml(T);h='<span class="crumb" onclick="go({v:\'ch\',c:'+V.c+',h:'+V.h+'})">← '+esc(chp().name)+'</span><h2>'+esc(T.name)+'</h2>'+subAcc(T)+
+  (S.edit?'<div class="st">Notes</div><textarea id="bd" placeholder="Write notes here...">'+esc(T.body)+'</textarea><div class="rowbtn"><button class="btn" onclick="saveBody()">Save notes</button><span id="ok" class="mu"></span></div><div class="st">Add audio, PDF or video</div><div class="tools"><button class="tool" onclick="recStart()"><span>🎙</span>Record</button><label class="tool"><span>📱</span>Phone recorder<input type="file" accept="audio/*" capture hidden onchange="up(\'audio\',this)"></label><label class="tool"><span>🎧</span>Audio file<input type="file" accept="audio/*" hidden onchange="up(\'audio\',this)"></label><label class="tool"><span>📄</span>PDF<input type="file" accept="application/pdf" hidden onchange="up(\'pdf\',this)"></label><label class="tool"><span>🎬</span>Video<input type="file" accept="video/*" hidden onchange="up(\'video\',this)"></label></div><div class="add"><input id="lk" placeholder="Paste a video / website link (YouTube, Drive...)"><button class="btn sec" onclick="addLink()">Add link</button></div>':(T.body?'<div class="notes">'+esc(T.body)+'</div>':''))+(FH?'<div class="st">Files</div>'+FH:'')+((!S.edit&&!T.body&&!(T.files&&T.files.length)&&!(T.lk&&!T.open))?'<div class="empty"><span>📭</span><p>Nothing added yet.</p></div>':'')}
+ else if(V.v==='set'){h='<h2>Settings</h2><div class="sh">Appearance</div><div class="sect"><div class="set"><span>Theme</span><select id="th" onchange="S.theme=this.value;sv();applyS()"><option value="auto">Auto</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="set"><span>Text size</span><span class="seg">'+[[15,'S'],[16,'M'],[18,'L'],[20,'XL']].map(function(t){return '<button class="'+(S.fs==t[0]?'on':'')+'" onclick="S.fs='+t[0]+';sv();applyS();render()">'+t[1]+'</button>'}).join('')+'</span></div><div class="set"><span>High contrast</span><input type="checkbox" style="width:auto" '+(S.hc?'checked':'')+' onchange="S.hc=this.checked;sv();applyS()"></div></div>'+
+ (OWNER?'<div class="sh">Publish and share</div><div class="sect"><div class="set"><span>Publish for students</span><button class="btn" onclick="pub()">Publish</button></div><div class="set"><span>Test GitHub connection</span><button class="btn sec" onclick="testGh()">Test</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Share link for students</span><input readonly value="'+LINK+'" onclick="this.select()" style="margin:6px 0"><button class="btn" onclick="copyLink()">Copy link</button></div></div><div class="sh">Content</div><div class="sect"><div class="set"><span>Edit mode</span><input type="checkbox" style="width:auto" '+(S.edit?'checked':'')+' onchange="S.edit=this.checked;sv()"></div><div class="set"><span>Load NCERT chapter list</span><button class="btn sec" onclick="loadAll()">Load</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Bulk add notes PDFs (Class9-Ch...)</span><input type="file" accept=".pdf,application/pdf" multiple onchange="bulkAdd(this)" style="margin-top:8px"></div></div><div class="sh">Selling</div><div class="sect"><div class="set" style="flex-direction:column;align-items:stretch"><span>Prices and passwords for all chapters</span><span class="mu">Price = class number in rupees. A different password is made for every chapter that has none.</span><button class="btn" style="margin-top:8px" onclick="autoAsk()">Make prices and passwords</button><button class="btn sec" style="margin-top:8px" onclick="go({v:\'pws\'})">Show passwords list</button></div><div class="set"><span>First topic of every paid chapter is free (trial)</span><input type="checkbox" style="width:auto" '+(D._fp?'checked':'')+' onchange="D._fp=this.checked;dd()"></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Buying instructions for students (optional)</span><textarea id="how" style="min-height:90px;margin:6px 0" placeholder="Leave empty to show the default 4 steps">'+esc(D._how||'')+'</textarea><button class="btn sec" onclick="D._how=document.getElementById(\'how\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><span>Payment QR image</span><label class="btn sec">Choose<input type="file" accept="image/*" hidden onchange="qrUp(this)"></label></div><div class="set" style="flex-direction:column;align-items:stretch"><span>UPI ID for the Pay button (optional)</span><input id="upi" placeholder="yourname@bank" value="'+esc(D._upi||'')+'" style="margin:6px 0"><input id="upn" placeholder="Name shown to the payer" value="'+esc(D._upn||'')+'" style="margin-bottom:6px"><button class="btn sec" onclick="D._upi=document.getElementById(\'upi\').value.trim();D._upn=document.getElementById(\'upn\').value.trim();dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div></div><div class="sh">Contact</div><div class="sect"><div class="set"><input id="wa" placeholder="Contact: WhatsApp number (919876543210), Telegram link (https://t.me/name) or email" value="'+esc(D._wa||'')+'" style="width:65%"><button class="btn sec" onclick="D._wa=document.getElementById(\'wa\').value.trim();dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div><div class="set"><input id="ct" placeholder="Contact / payment info for students" value="'+esc(D._contact||'')+'" style="width:65%"><button class="btn sec" onclick="D._contact=document.getElementById(\'ct\').value;dd();NT=\'Saved. Tap Publish.\';render()">Save</button></div></div><div class="sh">Activity</div><div class="sect"><div class="set"><span>Activity dashboard (who is viewing)</span><button class="btn" onclick="go({v:\'act\'})">Open</button></div><div class="set"><span>Make private activity link</span><button class="btn sec" onclick="mkLog()">Make</button></div><div class="set" style="flex-direction:column;align-items:stretch"><span>Activity log link (made above, or your own)</span><input id="lgu" placeholder="Paste your ntfy link (https://ntfy.sh/...) or Google Apps Script URL" value="'+esc(D._log||'')+'" style="margin:6px 0"><div><button class="btn sec" onclick="saveLog()">Save</button> <button class="btn sec" onclick="lgTest()">Send test</button></div></div><div class="set"><input id="pcin" placeholder="Password to find its code" style="width:65%"><button class="btn sec" onclick="pcShow()">Code</button></div></div><div class="sh">Account</div><div class="sect"><div class="set"><input id="np" type="text" placeholder="New password" style="width:60%"><button class="btn sec" onclick="setPw()">Change</button></div><div class="set"><span>Log out</span><button class="btn sec" onclick="logout()">Log out</button></div></div>':'<div class="sect"><div class="set"><span>Forget saved chapter passwords</span><button class="btn sec" onclick="try{localStorage.removeItem(\'nch_cp\')}catch(e){}NT=\'Done. Reopen the app.\';render()">Forget</button></div><div class="set"><span>Teacher login</span><button class="btn sec" onclick="go({v:\'tl\'})">Login</button></div></div>')+
+ '<div class="sh">About</div><div class="sect"><div class="set"><span>Install on your phone</span><button class="btn sm" onclick="installApp()">Install</button></div><div class="set"><span>Share this app</span><button class="btn sec sm" onclick="shareApp()">Share link</button></div></div><p class="mu" style="margin-top:14px">App version 4.3</p>'}
+ else if(V.v==='pws'&&OWNER){h='<span class="crumb" onclick="go({v:\'set\'})">&larr; Settings</span><h2>Passwords and prices</h2><p class="mu">Only you can see this. Tap the box, then copy. Do not share this screen.</p><textarea readonly style="min-height:460px;font-size:13px" onclick="this.select()">'+esc(pwText())+'</textarea>'}
+ else if(V.v==='pwl'&&OWNER){var t='';CLASSES.forEach(function(k){var L=chs(k);if(!L.length)return;t+=(k>100?'Social Science':'Science')+' - Class '+(k>100?k-100:k)+'\n';L.forEach(function(c,i){t+=(i+1)+'. '+c.name+' | '+(c.price||'-')+' | '+(c.pw||'-')+'\n'});t+='\n'});h='<span class="crumb" onclick="go({v:\'set\'})">\u2190 Settings</span><h2>All chapter passwords</h2><p class="mu">Only you can see this. Never show this page to students.</p><textarea id="pwt" readonly style="min-height:420px;font-size:13px">'+esc(t)+'</textarea><p><button class="btn" onclick="cpPw()">Copy all</button> <span id="ok" class="mu"></span></p>'}
+ else if(V.v==='act'&&OWNER){h='<span class="crumb" onclick="go({v:\'set\'})">← Settings</span><h2>Who is viewing</h2>'+actHtml()}
+ else if(V.v==='tl'){var sp='';try{sp=localStorage.getItem('nch_pw')||''}catch(e){}h='<h2>Teacher login</h2><input id="tpw" type="password" placeholder="Your teacher password" value="'+esc(sp)+'" style="margin-bottom:8px"><input id="ttk" type="password" placeholder="GitHub token (github_pat_...)" value="'+esc(TOK)+'"><p><button class="btn" onclick="tlLogin()">Login</button></p><p id="lm" style="color:var(--dn)"></p><p class="mu">The token is saved only on this phone.</p>'}
+ else{h='<h2>Privacy Policy</h2><p>NCERT Education Hub does not ask for personal information such as your name, phone number or email.</p><p>Content opens only with the password your teacher gives you. Your password, settings and listening counts are saved only on your phone, and logging out removes the password.</p><p>Payments happen outside this app. The app does not see or store any payment details.</p><p>The app has no ads.</p>'+((PUB&&PUB.log)?'<p>To protect paid lessons, the app records a random device code (not your name or phone number), which class, chapter or topic was opened or unlocked, whether the password was right, the date and time, and the phone or browser type, and sends this to the teacher. This helps the teacher notice if a password is being shared.</p>':'<p>The app does not track you.</p>')+((PUB&&PUB.contact)?'<p class="mu">Contact: '+esc(PUB.contact)+'</p>':'')}
+ var cfb=PEND?'<div class="note"><span>'+PMSG+'</span><span class="acts"><button class="btn sm" onclick="yes()">Yes</button><button class="btn sec sm" onclick="no()">No</button></span></div>':(REC?'<div class="note rec"><span>🔴 Recording...</span><button class="btn sm" onclick="recStop()">Stop and save</button></div>':NT?'<div class="note"><span>'+esc(NT)+'</span><button class="btn sec sm" onclick="NT=\'\';render()">OK</button></div>':'');a.innerHTML=cfb+bn+h;
+ var t=document.getElementById('th');if(t)t.value=S.theme;
+}
+(async function(){
+ ld();applyS();
+ try{var r=await fetch('data.json?t='+Date.now());var j=await r.json();
+  if(j.p){PUB=j.p;PENC=j.e||{};D=PUB.cl;dedupe();U=true;S.edit=false;await autoOpen()}
+  else if(j.m){PUB=j.m;LAZY=true;D={};U=true;S.edit=false;PCL=j.cls||PCL}}catch(e){}
+ render();
+ lg('app_open',{});
+ try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})}catch(e){}
+})();
+</script>
+
+
+</body></html>
